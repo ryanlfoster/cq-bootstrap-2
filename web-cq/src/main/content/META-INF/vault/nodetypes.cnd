@@ -1,0 +1,10 @@
+<'vaa'='http://www.virginatlantic.com'>
+
+[vaa:Airport]
+  mixin
+  - airportCode (string) mandatory
+  - airportName (string) mandatory
+  - airportCity (string) mandatory
+  - airportCountry (string) mandatory
+  - airportIsVaaDestination (string) = 'false'
+

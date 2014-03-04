@@ -1,0 +1,21 @@
+{
+  "name": "web-tests",
+  "description": "Javascript tests.",
+  "author": {
+    "name": "Stephen Smithstone",
+    "email": "stephen@smithstone.co.uk"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "karma": "^0.10.9",
+    "karma-junit-reporter": "*",
+    "karma-phantomjs-launcher": "*",
+    "karma-coverage": "*"
+  },
+  "bin": {
+    "karma": "./node_modules/karma/bin/karam start"
+  },
+  "version": "0.0.1",
+  "readme": "",
+  "readmeFilename": "README.md"
+}
