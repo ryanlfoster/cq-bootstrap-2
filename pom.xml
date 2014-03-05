@@ -30,6 +30,7 @@
     <build>
 
         <plugins>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -150,7 +151,7 @@
         <module>web-tags</module>
         <module>web-cq-tags</module>
 
-        <module>web-tests</module>
+        <!--<module>web-tests</module>-->
     </modules>
 
 

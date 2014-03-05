@@ -17,7 +17,7 @@
 
     <fsf:productSupportTag/>
 
-    <jsp:include page="/apps/aol/components/ssproduct/non-cq/baseproduct.jsp"/>
+    <jsp:include page="/apps/example/components/ssproduct/non-cq/baseproduct.jsp"/>
 
 </body>
 </html>

@@ -96,7 +96,7 @@
                     <webApp>
                         <contextPath>/web-tests</contextPath>
                         <baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
-                            <resourcesAsCSV>${pom.parent.basedir}/web-tests/src/main/webapp,${pom.parent.basedir}/web/src/main/java/,${pom.parent.basedir}/web/src/main/content/jcr_root/,${pom.parent.basedir}/web-js/src/main/content/jcr_root/</resourcesAsCSV>
+                            <resourcesAsCSV>src/main/webapp,../web/src/main/java/,../web/src/main/content/jcr_root/,../web-js/src/main/content/jcr_root/</resourcesAsCSV>
                         </baseResource>
 
                     </webApp>
@@ -107,11 +107,8 @@
                         </connector>
                     </connectors>
                     <stopKey>foo</stopKey>
-
                     <stopPort>9998</stopPort>
-
                 </configuration>
-
                 <executions>
                     <execution>
                         <id>start</id>
@@ -130,7 +127,6 @@
                             <goal>stop</goal>
                         </goals>
                     </execution>
-
                 </executions>
 
             </plugin>
