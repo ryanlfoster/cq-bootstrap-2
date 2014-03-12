@@ -40,6 +40,10 @@
                 <artifactId>content-package-maven-plugin</artifactId>
                 <version>0.0.20</version>
             </plugin>
+            <plugin>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>maven-sling-plugin</artifactId>
+            </plugin>
         </plugins>
     </build>
 </project>
