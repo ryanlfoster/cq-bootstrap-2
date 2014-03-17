@@ -5,13 +5,13 @@
 
     <description>Custom tag libraries</description>
     <tlib-version>1.0</tlib-version>
-    <short-name>smithstone-example-tags</short-name>
-    <uri>http://www.smithstone.com/fake-tags</uri>
+    <short-name>ecommerce-tags</short-name>
+    <uri>http://www.smithstone.com/ecommerce/fake-tags</uri>
 
 
     <tag>
         <name>productSupportTag</name>
-        <tag-class>example.fake.FakeProductSupportTag</tag-class>
+        <tag-class>ecommerce.fake.FakeProductSupportTag</tag-class>
         <body-content>empty</body-content>
     </tag>
 

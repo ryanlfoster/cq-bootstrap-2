@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
-    <filter root="/apps/example/components/ssproduct/non-cq/"/>
+    <filter root="/apps/ecommerce/components/ssproduct/non-cq/"/>
 </workspaceFilter>

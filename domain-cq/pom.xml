@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>testing_example</groupId>
-        <artifactId>testing_example</artifactId>
+        <groupId>uk.co.smithstone.oss</groupId>
+        <artifactId>ecommerce-cq</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
@@ -15,7 +15,7 @@
     <packaging>bundle</packaging>
     <dependencies>
         <dependency>
-            <groupId>testing_example</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>domain</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>

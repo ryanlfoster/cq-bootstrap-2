@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>testing_example</groupId>
-        <artifactId>testing_example</artifactId>
+        <groupId>uk.co.smithstone.oss</groupId>
+        <artifactId>ecommerce-cq</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
@@ -17,22 +17,95 @@
 
     <dependencies>
         <dependency>
-            <groupId>testing_example</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>domain-cq</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
         <dependency>
-            <groupId>testing_example</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>web-tags</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
         <dependency>
-            <groupId>testing_example</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>web-cq-tags</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
+
+
+
+        <dependency>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>org.apache.sling.jcr.jcr-wrapper</artifactId>
+            <version>2.0.0</version>
+            <!-- javax.jcr -->
+        </dependency>
+        <dependency>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>org.apache.sling.api</artifactId>
+            <version>2.6.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.day.cq</groupId>
+            <artifactId>cq-commons</artifactId>
+            <version>5.6.4</version>
+            <!-- com.day.cq.commons -->
+        </dependency>
+        <dependency>
+            <groupId>com.day.cq.wcm</groupId>
+            <artifactId>cq-wcm-commons</artifactId>
+            <version>5.6.4</version>
+            <!-- com.day.cq.wcm.commons -->
+        </dependency>
+        <dependency>
+            <groupId>com.day.cq.wcm</groupId>
+            <artifactId>cq-wcm-api</artifactId>
+            <version>5.6.6</version>
+            <!-- com.day.cq.wcm.api -->
+        </dependency>
+        <dependency>
+            <groupId>com.day.commons</groupId>
+            <artifactId>day-commons-jstl</artifactId>
+            <!-- javax.servlet.jsp.jstl.core -->
+        </dependency>
+        <dependency>
+            <groupId>com.day.cq.wcm</groupId>
+            <artifactId>cq-wcm-taglib</artifactId>
+            <version>5.6.4</version>
+            <!-- com.day.cq.wcm.tags -->
+        </dependency>
+        <dependency>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>org.apache.sling.scripting.jsp.taglib</artifactId>
+            <version>2.2.0</version>
+            <!-- org.apache.sling.scripting.jsp.taglib -->
+        </dependency>
+        <dependency>
+            <groupId>com.adobe.granite</groupId>
+            <artifactId>com.adobe.granite.xssprotection</artifactId>
+            <version>5.5.24</version>
+            <!-- com.adobe.granite.xss -->
+        </dependency>
+        <dependency>
+            <groupId>com.day.cq.wcm</groupId>
+            <artifactId>cq-wcm-core</artifactId>
+            <!-- com.day.cq.wcm.core.components -->
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.3</version>
+            <!-- org.apache.commons.lang3 -->
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.6</version>
+        </dependency>
+
 
     </dependencies>
 
@@ -65,6 +138,28 @@
                 <groupId>org.apache.sling</groupId>
                 <artifactId>maven-sling-plugin</artifactId>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <webappDirectory>src/main/content</webappDirectory>
+                    <webResources>
+                        <resource>
+                            <directory>../web/src/main/content/jcr_root/</directory>
+                        </resource>
+                        <!--<resource>-->
+                            <!--<directory>../web/src/main/java/WEB-INF/tags/apps/${cq.app.name}/components/tags</directory>-->
+                            <!--<targetPath>/WEB-INF/tags/apps/${cq.app.name}/components/tags</targetPath>-->
+                        <!--</resource>-->
+                        <!--<resource>-->
+                            <!--<directory>../web-js/src/main/content/jcr_root/</directory>-->
+                        <!--</resource>-->
+                    </webResources>
+                </configuration>
+            </plugin>
+
 
         </plugins>
     </build>

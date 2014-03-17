@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
-    <filter root="/apps/example/components/ssproduct/"/>
+    <filter root="/apps/ecommerce/components"/>
+    <filter root="/libs/foundation/global.jsp"/>
 </workspaceFilter>

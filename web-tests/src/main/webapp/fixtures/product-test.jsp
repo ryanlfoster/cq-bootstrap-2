@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="fsf" uri="http://www.smithstone.com/fake-tags" %>
+<%@ taglib prefix="fsf" uri="http://www.smithstone.com/ecommerce/fake-tags" %>
 <html>
 <head>
     <title>Product Test</title>
@@ -17,7 +17,7 @@
 
     <fsf:productSupportTag/>
 
-    <jsp:include page="/apps/example/components/ssproduct/non-cq/baseproduct.jsp"/>
+    <jsp:include page="/apps/ecommerce/components/ssproduct/non-cq/baseproduct.jsp"/>
 
 </body>
 </html>

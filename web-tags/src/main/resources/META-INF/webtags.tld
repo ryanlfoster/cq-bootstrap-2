@@ -5,13 +5,13 @@
 
     <description>Custom tag libraries</description>
     <tlib-version>1.0</tlib-version>
-    <short-name>smithstone-example-tags</short-name>
-    <uri>http://www.smithstone.com/tags</uri>
+    <short-name>ecommerce-tags</short-name>
+    <uri>http://www.smithstone.com/ecommerce/tags</uri>
 
 
     <tag>
         <name>productFactory</name>
-        <tag-class>example.web.tags.ProductFactoryTag</tag-class>
+        <tag-class>ecommerce.web.tags.ProductFactoryTag</tag-class>
         <body-content>empty</body-content>
     </tag>
 
