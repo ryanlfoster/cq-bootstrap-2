@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
     <filter root="/apps/ecommerce/components"/>
+    <filter root="/apps/ecommerce/templates"/>
     <filter root="/libs/foundation/global.jsp"/>
+    <filter root="/etc/blueprints/ecommerce-bootstrap"/>
+    <filter root="/content/ecommerce"/>
 </workspaceFilter>
