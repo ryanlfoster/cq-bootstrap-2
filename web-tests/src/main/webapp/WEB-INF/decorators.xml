@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <decorators defaultdir="/decorators">
+<!--
     <decorator name="basic-theme" page="basictheme.jsp">
         <pattern>/fixtures/*</pattern>
     </decorator>
+-->
+
+    <decorator name="master" page="master.jsp">
+        <pattern>/fixtures/*</pattern>
+    </decorator>
+
 </decorators>

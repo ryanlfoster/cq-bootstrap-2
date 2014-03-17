@@ -12,12 +12,21 @@
         .product-info div.title { float: left; }
         .product-info div.data { float:right; }
     </style>
+
+    <link rel="stylesheet" href="../etc/designs/ecommerce/style/main.css"/>
 </head>
-<body>
+<body >
+
+
 
     <fsf:productSupportTag/>
 
     <jsp:include page="/apps/ecommerce/components/ssproduct/non-cq/baseproduct.jsp"/>
+
+
+
+    <script src="../etc/designs/ecommerce/javascript/lib/controllers/greeting_controller.js"></script>
+    <script src="../etc/designs/ecommerce/javascript/lib/controllers/login_controller.js"></script>
 
 </body>
 </html>

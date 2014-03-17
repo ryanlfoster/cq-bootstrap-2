@@ -5,8 +5,60 @@
 
 <jsp:useBean id="product" type="ecommerce.domain.Product" scope="request"/>
 
+<div data-ng-app="ecommerce">
 
-<div class="product-info">
+    <div>
+        <p data-ng-controller="GreetingController">
+            {{greeting}}
+        </p>
+    </div>
+
+    <div>
+
+        <div data-ng-controller="LoginController">
+
+            <p>{{ formMessage }}</p>
+
+
+            <form action="#" data-ng-submit="login()">
+
+                <fieldset>
+
+                    <div>
+                        <label for="username">Username : </label>
+                        <input type="text" id="username" data-ng-model="model.username">
+                        <p>{{model.username}}</p>
+                    </div>
+
+                    <div>
+                        <label for="password">Password : </label>
+                        <input type="password" id="password" data-ng-model="model.password"/>
+                        <p>{{model.password}}</p>
+                    </div>
+
+                </fieldset>
+
+                <fieldset>
+
+                    <div>
+                        <input type="submit" value="Login"/>
+                    </div>
+
+                </fieldset>
+
+            </form>
+
+
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+<%--<div class="product-info">
     <h2>Product</h2>
 
     <div class="attribute">
@@ -46,4 +98,4 @@
     </div>
 
     <div class="clear_fix"></div>
-</div>
+</div>--%>
