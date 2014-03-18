@@ -15,4 +15,16 @@
         <body-content>empty</body-content>
     </tag>
 
+    <tag>
+        <name>panelSupportTag</name>
+        <tag-class>ecommerce.fake.FakePanelSupportTag</tag-class>
+        <body-content>empty</body-content>
+    </tag>
+
+    <tag>
+        <name>headedPanelSupportTag</name>
+        <tag-class>ecommerce.fake.FakeHeadedPanelSupportTag</tag-class>
+        <body-content>empty</body-content>
+    </tag>
+
 </taglib>

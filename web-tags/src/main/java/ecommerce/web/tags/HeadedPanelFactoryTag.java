@@ -1,8 +1,7 @@
 package ecommerce.web.tags;
 
+import ecommerce.domain.HeadedPanel;
 import ecommerce.domain.HeadedPanelModel;
-import ecommerce.domain.Panel;
-import ecommerce.domain.PanelModel;
 
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.PageContext;
@@ -17,7 +16,7 @@ public class HeadedPanelFactoryTag extends SimpleTagSupport {
     @Override
     public void doTag() throws JspException, IOException {
 
-        getJspContext().setAttribute("headedpanel"  , new Panel(
+        getJspContext().setAttribute("headedpanel", new HeadedPanel(
                 getModelInstance()), PageContext.REQUEST_SCOPE);
 
     }
