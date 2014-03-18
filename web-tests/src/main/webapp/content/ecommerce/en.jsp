@@ -13,5 +13,8 @@
 <jsp:include page="/apps/ecommerce/components/panel/panel.jsp"/>
 <jsp:include page="/apps/ecommerce/components/panel/panel.jsp"/>
 <jsp:include page="/apps/ecommerce/components/panelwithheader/panelwithheader.jsp"/>
+<jsp:include page="/apps/ecommerce/components/lorempanelwithheader/panelwithheader.jsp"/>
 </body>
 </html>
+
+

@@ -26,5 +26,11 @@
         <tag-class>ecommerce.fake.FakeHeadedPanelSupportTag</tag-class>
         <body-content>empty</body-content>
     </tag>
+    <tag>
+        <name>impsumHeadedPanelSupportTag</name>
+        <tag-class>ecommerce.fake.FakeLoremImpsumHeadedPanelSupportTag</tag-class>
+        <body-content>empty</body-content>
+    </tag>
+
 
 </taglib>
