@@ -8,15 +8,18 @@
 
     <jsp:include page="/apps/ecommerce/components/templates/master/non-cq/extrahead.jsp"/>
 
+    <style>
+        body {
+
+            margin-top: 60px;
+        }
+    </style>
+
 </head>
 <body>
 
-<%--<script src="../etc/designs/ecommerce/javascript/deps/angular.js"></script>--%>
-<script>
-//    var ecommerce = angular.module("ecommerce", []);
-</script>
 
-<h1>Master Template</h1>
+
 <div class="container">
 
 
