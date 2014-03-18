@@ -12,6 +12,7 @@
 
     <artifactId>domain-web</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>Ecommerce Bootstrap Domain Web Bundle</name>
 
     <dependencies>
         <dependency>

@@ -8,6 +8,9 @@
     </filter>
     <filter root="/apps/foundation/components/page"/>
     <filter root="/apps/ecommerce/templates"/>
+    <filter root="/apps/ecommerce/install">
+        <exclude pattern="/apps/ecommerce/install/*.jar"/>
+    </filter>
     <filter root="/libs/foundation/global.jsp"/>
     <filter root="/etc/blueprints/ecommerce-bootstrap"/>
     <filter root="/etc/designs/ecommerce">

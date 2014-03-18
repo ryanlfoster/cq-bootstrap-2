@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2014-03-18T22:15:13.910+11:00"
+        cq:lastModified="{Date}2014-03-19T09:41:54.662+11:00"
         cq:lastModifiedBy="admin"
         cq:lastReplicated="{Date}2014-03-18T22:12:13.509+11:00"
         cq:lastReplicatedBy="admin"
@@ -20,11 +20,11 @@
             <tabpanel
                 jcr:created="{Date}2014-03-18T21:42:50.012+11:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2014-03-18T22:15:13.906+11:00"
+                jcr:lastModified="{Date}2014-03-19T09:41:54.658+11:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ecommerce/components/tabpanel"
-                text="more lots and lots of text"/>
+                text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur ex explicabo quae quidem saepe sit tempora! Dolorum eveniet nobis numquam repellat. Ad cumque deleniti earum facilis libero mollitia, quod voluptatibus!. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur ex explicabo quae quidem saepe sit tempora! Dolorum eveniet nobis numquam repellat. Ad cumque deleniti earum facilis libero mollitia, quod voluptatibus!. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur ex explicabo quae quidem saepe sit tempora! Dolorum eveniet nobis numquam repellat. Ad cumque deleniti earum facilis libero mollitia, quod voluptatibus!. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur ex explicabo quae quidem saepe sit tempora! Dolorum eveniet nobis numquam repellat. Ad cumque deleniti earum facilis libero mollitia, quod voluptatibus!."/>
             <tabpanel_0
                 jcr:created="{Date}2014-03-18T21:45:01.114+11:00"
                 jcr:createdBy="admin"
@@ -36,12 +36,12 @@
             <panelwithheader
                 jcr:created="{Date}2014-03-18T22:10:20.258+11:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2014-03-18T22:14:38.260+11:00"
+                jcr:lastModified="{Date}2014-03-18T22:40:36.012+11:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="ecommerce/components/panelwithheader"
-                header="Header"
-                text="Lots and lots of text"/>
+                header="Panel Header"
+                text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur ex explicabo quae quidem saepe sit tempora! Dolorum eveniet nobis numquam repellat. Ad cumque deleniti earum facilis libero mollitia, quod voluptatibus!.&#xa;&#xa;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur ex explicabo quae quidem saepe sit tempora! Dolorum eveniet nobis numquam repellat. Ad cumque deleniti earum facilis libero mollitia, quod voluptatibus!.&#xa;&#xa;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur ex explicabo quae quidem saepe sit tempora! Dolorum eveniet nobis numquam repellat. Ad cumque deleniti earum facilis libero mollitia, quod voluptatibus!.&#xa;&#xa;&#xa;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur ex explicabo quae quidem saepe sit tempora! Dolorum eveniet nobis numquam repellat. Ad cumque deleniti earum facilis libero mollitia, quod voluptatibus!.&#xa;"/>
         </par>
     </jcr:content>
 </jcr:root>

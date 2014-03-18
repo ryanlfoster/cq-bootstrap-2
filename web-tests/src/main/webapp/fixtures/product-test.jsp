@@ -1,6 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="t" tagdir="/WEB-INF/tags/apps/ecommerce/components/tags" %>
 <%@ taglib prefix="fsf" uri="http://www.smithstone.com/ecommerce/fake-tags" %>
+<%@taglib prefix="ecomm" uri="http://www.smithstone.com/ecommerce/tags" %>
+
 <html>
 <head>
     <title>Product Test</title>
@@ -19,6 +21,7 @@
 <body >
 
 
+<ecomm:panelFactory/>
 
     <%--<fsf:productSupportTag/>--%>
 

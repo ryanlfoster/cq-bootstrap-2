@@ -6,12 +6,24 @@
     <description>Custom tag libraries</description>
     <tlib-version>1.0</tlib-version>
     <short-name>smithstone-ecommerce-tags</short-name>
-    <uri>http://www.smithstone.com/cq-tags</uri>
+    <uri>http://www.smithstone.com/ecommerce/cq-tags</uri>
 
 
     <tag>
         <name>productSupportTag</name>
         <tag-class>ecommerce.web.tags.cq.CQProductSupportTag</tag-class>
+        <body-content>empty</body-content>
+    </tag>
+
+    <tag>
+        <name>panelSupportTag</name>
+        <tag-class>ecommerce.web.tags.cq.CQPanelSupportTag</tag-class>
+        <body-content>empty</body-content>
+    </tag>
+
+    <tag>
+        <name>headedPanelSupportTag</name>
+        <tag-class>ecommerce.web.tags.cq.CQHeadedPanelSupportTag</tag-class>
         <body-content>empty</body-content>
     </tag>
 
