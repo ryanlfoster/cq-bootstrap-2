@@ -2,4 +2,6 @@
 <workspaceFilter version="1.0">
     <filter root="/etc/designs/ecommerce/javascript"/>
     <filter root="/etc/designs/ecommerce/style"/>
+    <filter root="/etc/designs/ecommerce"/>
+    <filter root="/etc/designs/geometrixx"/>
 </workspaceFilter>

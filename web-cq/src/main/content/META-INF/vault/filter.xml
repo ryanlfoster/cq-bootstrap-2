@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspaceFilter version="1.0">
-    <filter root="/apps/ecommerce/components"/>
+
+    <filter root="/apps/ecommerce/components">
+            <exclude pattern="/apps/ecommerce/components/ssproduct/non-cq"/>
+            <exclude pattern="/apps/ecommerce/components/panelwithheader/non-cq"/>
+            <exclude pattern="/apps/ecommerce/components/tabpanel/non-cq"/>
+    </filter>
+    <filter root="/apps/foundation/components/page"/>
     <filter root="/apps/ecommerce/templates"/>
     <filter root="/libs/foundation/global.jsp"/>
     <filter root="/etc/blueprints/ecommerce-bootstrap"/>
+    <filter root="/etc/designs/ecommerce">
+            <exclude pattern="/etc/designs/ecommerce/javascript"/>
+            <exclude pattern="/etc/designs/ecommerce/style"/>
+    </filter>
+
     <filter root="/content/ecommerce"/>
 </workspaceFilter>
