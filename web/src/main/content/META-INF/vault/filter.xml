@@ -4,5 +4,6 @@
     <filter root="/apps/ecommerce/components/tabpanel/non-cq/"/>
     <filter root="/apps/ecommerce/components/panelwithheader/non-cq/"/>
     <filter root="/apps/ecommerce/components/templates/master/non-cq/"/>
+    <filter root="/apps/ecommerce/components/tags"/>
     <filter root="/etc/designs/ecommerce/style"/>
 </workspaceFilter>

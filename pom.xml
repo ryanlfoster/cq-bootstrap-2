@@ -105,13 +105,28 @@
                         <password>admin</password>
                         <slingUrl>http://localhost:4502/apps/ecommerce/install</slingUrl>
                     </configuration>
-
+                    <executions>
+                        <execution>
+                            <phase>install</phase>
+                            <goals>
+                                <goal>install</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>com.day.jcr.vault</groupId>
                     <artifactId>content-package-maven-plugin</artifactId>
                     <version>0.0.20</version>
                     <extensions>true</extensions>
+                    <executions>
+                        <execution>
+                            <phase>install</phase>
+                            <goals>
+                                <goal>install</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                     <configuration>
                         <userId>admin</userId>
                         <failOnError>true</failOnError>

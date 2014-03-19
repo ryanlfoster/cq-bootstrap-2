@@ -8,8 +8,6 @@
     <title>Product Test</title>
 </head>
 <body >
-
-
 <jsp:include page="/apps/ecommerce/components/panel/panel.jsp"/>
 <jsp:include page="/apps/ecommerce/components/panel/panel.jsp"/>
 <jsp:include page="/apps/ecommerce/components/panelwithheader/panelwithheader.jsp"/>

@@ -134,11 +134,19 @@
                 <groupId>com.day.jcr.vault</groupId>
                 <artifactId>content-package-maven-plugin</artifactId>
                 <version>0.0.20</version>
+                <configuration>
+                    <groupId>uk.co.smithstone.oss</groupId>
+                    <filterSource>src/main/content/META-INF/vault/filter.xml</filterSource>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>maven-sling-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
             </plugin>
+
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
