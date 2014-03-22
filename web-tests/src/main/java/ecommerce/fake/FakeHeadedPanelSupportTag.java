@@ -6,6 +6,8 @@ import ecommerce.web.tags.HeadedPanelModelFactory;
 
 public class FakeHeadedPanelSupportTag extends AbstractHeadedPanelSupportTag {
 
+    public static final String TEXT = "Fake Text";
+
     @Override
     protected HeadedPanelModelFactory getModelFactory() {
         return new HeadedPanelModelFactory() {
@@ -19,7 +21,7 @@ public class FakeHeadedPanelSupportTag extends AbstractHeadedPanelSupportTag {
 
                     @Override
                     public String getText() {
-                        return "Fake Text";
+                        return TEXT;
                     }
                 };
             }

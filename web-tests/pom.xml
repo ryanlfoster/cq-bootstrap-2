@@ -19,7 +19,7 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>web</artifactId>
+            <artifactId>domain</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
@@ -28,7 +28,17 @@
             <artifactId>web-tags</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.7.3</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
@@ -74,12 +84,33 @@
 
     <build>
         <plugins>
-
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>**/*Test.java</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <version>2.16</version>
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>integration-test</phase>
+                        <goals>
+                            <goal>integration-test</goal>
+                        </goals>
 
+                    </execution>
+                </executions>
             </plugin>
 
             <plugin>
@@ -90,6 +121,7 @@
                     <executable>run-karma.sh</executable>
 
                 </configuration>
+<!--
                 <executions>
                     <execution>
                         <id>karma-tests</id>
@@ -99,6 +131,7 @@
                         </goals>
                     </execution>
                 </executions>
+-->
             </plugin>
 
             <plugin>
@@ -107,7 +140,7 @@
                 <version>7.6.14.v20131031</version>
                 <configuration>
                     <webApp>
-                        <contextPath>/web-tests</contextPath>
+                        <contextPath>/</contextPath>
                         <baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
                             <resourcesAsCSV>src/main/webapp,../web/src/main/java/,../web/src/main/content/jcr_root/,../web-js/src/main/content/jcr_root/</resourcesAsCSV>
                         </baseResource>

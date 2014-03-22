@@ -11,7 +11,6 @@
     <description>Bootstrap CQ Ecommerce</description>
     <name>CQ Ecommerce Bootstrap</name>
 
-
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -101,6 +100,7 @@
                         <password>admin</password>
                         <slingUrl>http://localhost:4502/apps/ecommerce/install</slingUrl>
                     </configuration>
+<!--
                     <executions>
                         <execution>
                             <phase>install</phase>
@@ -109,12 +109,14 @@
                             </goals>
                         </execution>
                     </executions>
+-->
                 </plugin>
                 <plugin>
                     <groupId>com.day.jcr.vault</groupId>
                     <artifactId>content-package-maven-plugin</artifactId>
                     <version>0.0.20</version>
                     <extensions>true</extensions>
+<!--
                     <executions>
                         <execution>
                             <phase>install</phase>
@@ -123,6 +125,7 @@
                             </goals>
                         </execution>
                     </executions>
+-->
                     <configuration>
                         <userId>admin</userId>
                         <failOnError>true</failOnError>
@@ -181,7 +184,10 @@
     </modules>
 
 
+
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <cq.app.name>ecommerce</cq.app.name>
         <releaseRepository-Id>adobe-public-releases</releaseRepository-Id>
         <releaseRepository-Name>Adobe Public Releases</releaseRepository-Name>
