@@ -104,6 +104,7 @@
                 </configuration>
                 <executions>
                     <execution>
+                        <id>run-jsp-tests</id>
                         <phase>integration-test</phase>
                         <goals>
                             <goal>integration-test</goal>
@@ -121,7 +122,6 @@
                     <executable>run-karma.sh</executable>
 
                 </configuration>
-<!--
                 <executions>
                     <execution>
                         <id>karma-tests</id>
@@ -131,7 +131,6 @@
                         </goals>
                     </execution>
                 </executions>
--->
             </plugin>
 
             <plugin>
