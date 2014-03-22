@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.zeroturnaround.com"
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns="http://www.zeroturnaround.com"
              xsi:schemaLocation="http://www.zeroturnaround.com http://www.zeroturnaround.com/alderaan/rebel-2_0.xsd">
 
     <classpath>
         <dir name="/Users/ssmithstone/Development/smithstone-oss/bootstrap_ecommerce_cq/ecommerce/web-tests/target/classes">
         </dir>
+        <dir name="/Users/ssmithstone/Development/smithstone-oss/bootstrap_ecommerce_cq/ecommerce/domain/target/classes"/>
+        <dir name="/Users/ssmithstone/Development/smithstone-oss/bootstrap_ecommerce_cq/ecommerce/web/target/classes"/>
+        <dir name="/Users/ssmithstone/Development/smithstone-oss/bootstrap_ecommerce_cq/ecommerce/web-tags/target/classes"/>
     </classpath>
     <web>
         <link target="/">
@@ -25,6 +29,10 @@
         </link>
         <link target="/">
             <dir name="/Users/ssmithstone/Development/smithstone-oss/bootstrap_ecommerce_cq/ecommerce/web-tests/src/main/webapp/WEB-INF">
+            </dir>
+        </link>
+        <link target="/">
+            <dir name="/Users/ssmithstone/Development/smithstone-oss/bootstrap_ecommerce_cq/ecommerce/web-tags/src/main/resources/META-INF">
             </dir>
         </link>
     </web>
