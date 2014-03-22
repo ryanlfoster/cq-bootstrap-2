@@ -16,6 +16,14 @@
     <description>Ecommerce Bootstrap Domain Bundle</description>
     <name>Ecommerce Bootstrap Domain Bundle (domain)</name>
 
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
