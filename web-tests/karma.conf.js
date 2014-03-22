@@ -32,7 +32,7 @@ module.exports = function (config) {
         reporters: ['progress' , 'coverage' , 'junit'],
 
         junitReporter: {
-            outputFile: 'target/karma-results/test-results.xml',
+            outputFile: 'target/karma-reports/test-results.xml',
             suite: ''
         },
         // web server port
