@@ -11,7 +11,6 @@ public class CQHeadedPanelSupportTag extends AbstractHeadedPanelSupportTag {
 
     @Override
     protected HeadedPanelModelFactory getModelFactory() {
-        ValueMap properties = (ValueMap) getJspContext().findAttribute("properties");
-        return new CQHeadedPanelModelFactory(properties);
+        return new CQHeadedPanelModelFactory(ValueMapLocator.locate(getJspContext()));
     }
 }

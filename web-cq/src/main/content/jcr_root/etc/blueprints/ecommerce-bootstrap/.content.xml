@@ -12,7 +12,7 @@
         sling:resourceType="wcm/msm/components/blueprint"
         sitePath="/content/ecommerce"
         thumbnailRotate="0">
-        <dialog/>
         <thumbnail/>
+        <dialog/>
     </jcr:content>
 </jcr:root>

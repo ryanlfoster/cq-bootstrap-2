@@ -22,7 +22,6 @@
 
 <div class="container">
 
-
     <decorator:body/>
 
 </div>

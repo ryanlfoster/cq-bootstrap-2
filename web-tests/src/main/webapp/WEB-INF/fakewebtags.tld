@@ -8,13 +8,6 @@
     <short-name>ecommerce-tags</short-name>
     <uri>http://www.smithstone.com/ecommerce/fake-tags</uri>
 
-
-    <tag>
-        <name>productSupportTag</name>
-        <tag-class>ecommerce.fake.FakeProductSupportTag</tag-class>
-        <body-content>empty</body-content>
-    </tag>
-
     <tag>
         <name>panelSupportTag</name>
         <tag-class>ecommerce.fake.FakePanelSupportTag</tag-class>

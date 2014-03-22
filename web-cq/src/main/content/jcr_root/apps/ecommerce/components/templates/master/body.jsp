@@ -1,11 +1,7 @@
 <%@include file="/libs/foundation/global.jsp" %>
 
-
-<div class="container">
+<h1>Master Template Body</h1>
 
 <cq:include resourceType="foundation/components/parsys" path="par"/>
-
-</div>
-
 
 <cq:include script="extrabody.jsp"/>

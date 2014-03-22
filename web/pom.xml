@@ -13,7 +13,8 @@
     <artifactId>web</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>content-package</packaging>
-    <name>Ecommerce Bootstrap Web Components</name>
+    <name>Ecommerce Bootstrap Web Components (web)</name>
+    <description>Ecommerce Bootstrap Web Content</description>
 
     <dependencies>
         <dependency>

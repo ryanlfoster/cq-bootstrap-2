@@ -6,7 +6,6 @@
         <dir name="/Users/ssmithstone/Development/smithstone-oss/bootstrap_ecommerce_cq/ecommerce/web-tests/target/classes">
         </dir>
     </classpath>
-
     <web>
         <link target="/">
             <dir name="/Users/ssmithstone/Development/smithstone-oss/bootstrap_ecommerce_cq/ecommerce/web-tests/src/main/webapp">
@@ -24,7 +23,10 @@
             <dir name="/Users/ssmithstone/Development/smithstone-oss/bootstrap_ecommerce_cq/ecommerce/web-js/src/main/content/jcr_root">
             </dir>
         </link>
-
+        <link target="/">
+            <dir name="/Users/ssmithstone/Development/smithstone-oss/bootstrap_ecommerce_cq/ecommerce/web-tests/src/main/webapp/WEB-INF">
+            </dir>
+        </link>
     </web>
 
 </application>

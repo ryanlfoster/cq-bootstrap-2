@@ -13,7 +13,8 @@
     <artifactId>web-cq</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>content-package</packaging>
-    <name>Ecommerce Bootstrap Web Components CQ </name>
+    <name>Ecommerce Bootstrap Web Components CQ (web-cq)</name>
+    <description>Ecommerce Bootstrap Web CQ Content</description>
 
 
     <dependencies>

@@ -1,56 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2014-03-19T09:56:18.569+11:00"
+        cq:designPath="/etc/designs/ecommerce"
+        cq:lastModified="{Date}2014-03-20T19:06:01.110+11:00"
         cq:lastModifiedBy="admin"
-        cq:lastReplicated="{Date}2014-03-18T22:12:13.509+11:00"
-        cq:lastReplicatedBy="admin"
-        cq:lastReplicationAction="Activate"
         cq:template="/apps/ecommerce/templates/master"
-        jcr:isCheckedOut="{Boolean}true"
-        jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Home Page English"
-        jcr:uuid="c5f52141-114f-48c5-a1e4-f91d4fe5ba07"
+        jcr:title="English"
         sling:resourceType="ecommerce/components/templates/master">
         <par
             jcr:primaryType="nt:unstructured"
             sling:resourceType="foundation/components/parsys">
-            <tabpanel
-                jcr:created="{Date}2014-03-18T21:42:50.012+11:00"
+            <mycontainer
+                jcr:created="{Date}2014-03-20T10:15:43.468+11:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2014-03-19T09:41:54.658+11:00"
+                jcr:lastModified="{Date}2014-03-20T19:06:01.102+11:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="ecommerce/components/tabpanel"
-                text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur ex explicabo quae quidem saepe sit tempora! Dolorum eveniet nobis numquam repellat. Ad cumque deleniti earum facilis libero mollitia, quod voluptatibus!. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur ex explicabo quae quidem saepe sit tempora! Dolorum eveniet nobis numquam repellat. Ad cumque deleniti earum facilis libero mollitia, quod voluptatibus!. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur ex explicabo quae quidem saepe sit tempora! Dolorum eveniet nobis numquam repellat. Ad cumque deleniti earum facilis libero mollitia, quod voluptatibus!. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur ex explicabo quae quidem saepe sit tempora! Dolorum eveniet nobis numquam repellat. Ad cumque deleniti earum facilis libero mollitia, quod voluptatibus!."/>
-            <tabpanel_0
-                jcr:created="{Date}2014-03-18T21:45:01.114+11:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2014-03-18T22:15:06.134+11:00"
-                jcr:lastModifiedBy="admin"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="ecommerce/components/tabpanel"
-                text="Lots and lots and lots of text"/>
-            <panelwithheader
-                jcr:created="{Date}2014-03-18T22:10:20.258+11:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2014-03-18T22:40:36.012+11:00"
-                jcr:lastModifiedBy="admin"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="ecommerce/components/panelwithheader"
-                header="Panel Header"
-                text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur ex explicabo quae quidem saepe sit tempora! Dolorum eveniet nobis numquam repellat. Ad cumque deleniti earum facilis libero mollitia, quod voluptatibus!.&#xa;&#xa;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur ex explicabo quae quidem saepe sit tempora! Dolorum eveniet nobis numquam repellat. Ad cumque deleniti earum facilis libero mollitia, quod voluptatibus!.&#xa;&#xa;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur ex explicabo quae quidem saepe sit tempora! Dolorum eveniet nobis numquam repellat. Ad cumque deleniti earum facilis libero mollitia, quod voluptatibus!.&#xa;&#xa;&#xa;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur ex explicabo quae quidem saepe sit tempora! Dolorum eveniet nobis numquam repellat. Ad cumque deleniti earum facilis libero mollitia, quod voluptatibus!.&#xa;"/>
-            <panelwithheader_0
-                jcr:created="{Date}2014-03-19T09:56:04.034+11:00"
-                jcr:createdBy="admin"
-                jcr:lastModified="{Date}2014-03-19T09:56:18.564+11:00"
-                jcr:lastModifiedBy="admin"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="ecommerce/components/panelwithheader"
-                header="Some Header Text"
-                text="Some random long text"/>
+                sling:resourceType="ecommerce/components/mycontainer">
+                <container_contents
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="foundation/components/parsys">
+                    <tabpanel
+                        jcr:created="{Date}2014-03-20T11:38:00.267+11:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2014-03-20T11:38:00.267+11:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ecommerce/components/tabpanel"/>
+                    <panelwithheader
+                        jcr:created="{Date}2014-03-20T11:39:16.836+11:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2014-03-20T11:39:16.836+11:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ecommerce/components/panelwithheader"/>
+                    <tabpanel_0
+                        jcr:created="{Date}2014-03-20T11:39:22.059+11:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2014-03-20T11:39:22.059+11:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ecommerce/components/tabpanel"/>
+                    <panelwithheader_0
+                        jcr:created="{Date}2014-03-20T11:39:40.697+11:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2014-03-20T11:39:40.697+11:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ecommerce/components/panelwithheader"/>
+                </container_contents>
+            </mycontainer>
         </par>
     </jcr:content>
 </jcr:root>

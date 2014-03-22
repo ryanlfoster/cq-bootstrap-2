@@ -5,4 +5,5 @@
 <%@taglib prefix="ecomm-cq" uri="http://www.smithstone.com/ecommerce/cq-tags" %>
 
 <ecomm-cq:panelSupportTag/>
+
 <cq:include script="non-cq/basepanel.jsp"/>

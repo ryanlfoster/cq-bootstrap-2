@@ -13,8 +13,8 @@
     <artifactId>domain</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>bundle</packaging>
-    <description>ecommerce domain bundle</description>
-    <name>Ecommerce Bootstrap Domain Bundle</name>
+    <description>Ecommerce Bootstrap Domain Bundle</description>
+    <name>Ecommerce Bootstrap Domain Bundle (domain)</name>
 
     <build>
         <plugins>

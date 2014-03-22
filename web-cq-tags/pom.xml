@@ -13,7 +13,8 @@
     <artifactId>web-cq-tags</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>bundle</packaging>
-    <name>Ecommerce Bootstrap Web Tags CQ Domain Bundle</name>
+    <name>Ecommerce Bootstrap Web Tags CQ Domain Bundle (web-cq-tags)</name>
+    <description>Ecommerce Bootstrap Web CQ Tags Bundle</description>
 
     <dependencies>
 
@@ -26,6 +27,12 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>web-tags</artifactId>
             <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -169,6 +176,12 @@
             <artifactId>com.adobe.granite.xssprotection</artifactId>
             <version>5.5.24</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>org.springframework.test</artifactId>
+            <version>3.2.1.RELEASE</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>

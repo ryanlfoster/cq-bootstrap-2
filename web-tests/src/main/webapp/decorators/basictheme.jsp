@@ -13,13 +13,13 @@
         .product-info div.data { float:right; }
     </style>
 
-    <script src="../etc/design/aol/javascript/deps/jquery-1.9.1.min.js"></script>
-    <script src="../etc/design/aol/javascript/main/main.js"></script>
+    <%--<script src="../etc/design/aol/javascript/deps/jquery-1.9.1.min.js"></script>--%>
+    <%--<script src="../etc/design/aol/javascript/main/main.js"></script>--%>
 
 </head>
 <body>
     <p>Decorator</p>
-    <decorator:body />
+    <%--<decorator:body />--%>
 
 
 </body>

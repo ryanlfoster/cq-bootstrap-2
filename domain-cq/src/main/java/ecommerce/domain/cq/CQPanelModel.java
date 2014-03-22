@@ -5,6 +5,12 @@ import org.apache.sling.api.resource.ValueMap;
 
 public class CQPanelModel implements PanelModel {
 
+
+    public static interface Properties {
+
+        String TEXT = "text";
+    }
+
     private ValueMap properties;
 
     public CQPanelModel(ValueMap properties) {
@@ -17,6 +23,6 @@ public class CQPanelModel implements PanelModel {
 
     @Override
     public String getText() {
-        return properties.get("text" , "[ No Text Specified ]");
+        return properties.get(Properties.TEXT, DEFAULT_TEXT);
     }
 }

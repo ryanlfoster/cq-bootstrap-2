@@ -17,6 +17,7 @@ public class CQHeadedPanelModelFactory implements HeadedPanelModelFactory {
     @Override
     public HeadedPanelModel getInstance() {
         return new HeadedPanelModel() {
+
             @Override
             public String getHeaderText() {
                 return properties.get("header" , "[ No Header Text ]");

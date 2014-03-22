@@ -19,8 +19,8 @@
             </par>
         </master>
     </jcr:content>
-    <javascript/>
     <style/>
     <less/>
     <scss/>
+    <javascript/>
 </jcr:root>
