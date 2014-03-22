@@ -189,9 +189,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <cq.app.name>ecommerce</cq.app.name>
-        <!--<releaseRepository-Id>adobe-public-releases</releaseRepository-Id>-->
-        <!--<releaseRepository-Name>Adobe Public Releases</releaseRepository-Name>-->
-        <!--<releaseRepository-URL>http://repo.adobe.com/nexus/content/groups/public</releaseRepository-URL>-->
+        <releaseRepository-Id>adobe-public-releases</releaseRepository-Id>
+        <releaseRepository-Name>Adobe Public Releases</releaseRepository-Name>
+        <releaseRepository-URL>http://repo.adobe.com/nexus/content/groups/public</releaseRepository-URL>
     </properties>
 
     <repositories>

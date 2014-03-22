@@ -13,8 +13,7 @@ describe("main" , function(){
     });
 
     it("should be able to run tests", function () {
-        console.log(jasmine.getEnv());
-//        expect(a()).toBeTruthy();
+        expect(true).toBeTruthy();
 //        expect($(".product-info").size()).toBe(1);
     });
 

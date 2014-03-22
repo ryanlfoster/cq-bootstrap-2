@@ -14,9 +14,9 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
-            '../web-js/src/main/content/jcr_root/etc/design/example/javascript/deps/jquery-1.9.1.min.js',
+            '../web-js/src/main/content/jcr_root/etc/designs/ecommerce/javascript/deps/jquery-1.9.1.min.js',
             'src/test/javascript/lib/jasmine-jquery-1.7.0.js',
-            '../web-js/src/main/content/jcr_root/etc/design/example/javascript/main/*.js',
+            '../web-js/src/main/content/jcr_root/etc/designs/ecommerce/javascript/lib/*.js',
             'src/test/javascript/**/*_spec.js'
         ],
 
@@ -32,7 +32,7 @@ module.exports = function (config) {
         reporters: ['progress' , 'coverage' , 'junit'],
 
         junitReporter: {
-            outputFile: 'test-results.xml',
+            outputFile: 'target/karma-results/test-results.xml',
             suite: ''
         },
         // web server port
@@ -77,7 +77,7 @@ module.exports = function (config) {
             'karma-junit-reporter' ,
             'karma-phantomjs-launcher'],
         preprocessors: {
-            'src/main/resources/jcr_root/etc/design/bootstrap/javascript/**/*.js': ['coverage']
+            'src/main/resources/jcr_root/etc/designs/ecommerce/javascript/lib/*.js': ['coverage']
         },
 
         coverageReporter: {
