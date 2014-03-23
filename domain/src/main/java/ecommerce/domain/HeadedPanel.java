@@ -3,21 +3,7 @@ package ecommerce.domain;
 public class HeadedPanel  {
 
 
-    private HeadedPanelModel model = new HeadedPanelModel() {
-        @Override
-        public String getHeaderText() {
-            return "[ Header Text ]";
-        }
-
-        @Override
-        public String getText() {
-            return "[ ---- ]";
-        }
-
-        public String toString() {
-            return String.format("%s - %s", getHeaderText(), getModel());
-        }
-    };
+    private HeadedPanelModel model = new NullHeadedPanelModel();
 
     public HeadedPanel(){}
 
@@ -27,5 +13,23 @@ public class HeadedPanel  {
 
     public HeadedPanelModel getModel() {
         return model;
+    }
+
+    protected static class NullHeadedPanelModel implements HeadedPanelModel  {
+
+        @Override
+        public String getHeaderText() {
+            return Defaults.HEADER_TEXT;
+        }
+
+        @Override
+        public String getText() {
+            return Defaults.TEXT;
+        }
+
+        public interface Defaults {
+            String HEADER_TEXT = "[ Header Text ]";
+            String TEXT = "[ ---- ]";
+        }
     }
 }
