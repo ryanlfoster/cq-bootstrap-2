@@ -7,7 +7,7 @@ import ecommerce.web.tags.HeadedPanelModelFactory;
 public class FakeHeadedPanelSupportTag extends AbstractHeadedPanelSupportTag {
 
     public static final String TEXT = "Fake Text";
-    public static final String HEADER_TEXT = "Fake Header Text - Feature EBQC-2-PANEL";
+    public static final String HEADER_TEXT = "Fake Header Text";
 
     @Override
     protected HeadedPanelModelFactory getModelFactory() {
