@@ -19,7 +19,6 @@ public class CQHeadedPanelModel extends ValueMapModel implements HeadedPanelMode
         super();
     }
 
-
     @Override
     public String getHeaderText() {
         return properties.get(PROPERTY_HEADER_TEXT, DEFAULT_HEADER_TEXT);
