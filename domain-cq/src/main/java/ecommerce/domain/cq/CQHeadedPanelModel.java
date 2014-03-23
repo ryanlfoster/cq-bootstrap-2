@@ -2,18 +2,23 @@ package ecommerce.domain.cq;
 
 import ecommerce.domain.HeadedPanelModel;
 import org.apache.sling.api.resource.ValueMap;
+import org.apache.sling.api.wrappers.ValueMapDecorator;
 
-public class CQHeadedPanelModel implements HeadedPanelModel {
+import java.util.HashMap;
 
-    private final ValueMap properties;
+public class CQHeadedPanelModel extends ValueMapModel implements HeadedPanelModel {
 
     protected final static String PROPERTY_TEXT = "text";
     protected final static String PROPERTY_HEADER_TEXT = "header";
 
     public CQHeadedPanelModel(ValueMap properties) {
-
-        this.properties = properties;
+        super(properties);
     }
+
+    public CQHeadedPanelModel() {
+        super();
+    }
+
 
     @Override
     public String getHeaderText() {
@@ -25,3 +30,4 @@ public class CQHeadedPanelModel implements HeadedPanelModel {
         return properties.get(PROPERTY_TEXT , DEFAULT_TEXT);
     }
 }
+

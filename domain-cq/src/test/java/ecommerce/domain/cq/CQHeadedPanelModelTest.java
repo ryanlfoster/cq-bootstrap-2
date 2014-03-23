@@ -23,6 +23,14 @@ public class CQHeadedPanelModelTest {
     }
 
     @Test
+    public void modelHasNoValueProvided_ShouldReturnDefaultValues() throws Exception {
+        CQHeadedPanelModel model = new CQHeadedPanelModel();
+        assertThat(model.getHeaderText(), equalTo(HeadedPanelModel.DEFAULT_HEADER_TEXT));
+        assertThat(model.getText(), equalTo(HeadedPanelModel.DEFAULT_TEXT));
+
+    }
+
+    @Test
     public void model_ShouldReturnPropertyValuesWhenAvailabeInValueMap() throws Exception {
         HashMap<String, Object> base = new HashMap<String, Object>();
         ValueMapDecorator properties = new ValueMapDecorator(base);
