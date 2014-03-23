@@ -15,8 +15,8 @@ public class HeadedPanelTest {
 
         HeadedPanel panel = new HeadedPanel();
         assertThat(panel.getModel(), is(notNullValue()));
-        assertThat(panel.getModel().getHeaderText(), equalTo(HeadedPanel.NullHeadedPanelModel.Defaults.HEADER_TEXT));
-        assertThat(panel.getModel().getText(), equalTo(HeadedPanel.NullHeadedPanelModel.Defaults.TEXT));
+        assertThat(panel.getModel().getHeaderText(), equalTo(HeadedPanel.NullHeadedPanelModel.DEFAULT_HEADER_TEXT));
+        assertThat(panel.getModel().getText(), equalTo(HeadedPanel.NullHeadedPanelModel.DEFAULT_TEXT));
 
     }
 

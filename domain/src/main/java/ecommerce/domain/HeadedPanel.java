@@ -19,17 +19,13 @@ public class HeadedPanel  {
 
         @Override
         public String getHeaderText() {
-            return Defaults.HEADER_TEXT;
+            return DEFAULT_HEADER_TEXT;
         }
 
         @Override
         public String getText() {
-            return Defaults.TEXT;
+            return DEFAULT_TEXT;
         }
 
-        public interface Defaults {
-            String HEADER_TEXT = "[ Header Text ]";
-            String TEXT = "[ ---- ]";
-        }
     }
 }
