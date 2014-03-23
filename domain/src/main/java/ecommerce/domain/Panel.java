@@ -13,6 +13,7 @@ public class Panel {
 
     }
 
+
     public Panel(PanelModel panelModel) {
         this.panelModel = panelModel;
     }
