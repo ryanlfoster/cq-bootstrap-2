@@ -18,18 +18,29 @@ public class CQPanelModelTest {
     @Before
     public void setUp() throws Exception {
         hashMap = new HashMap<String, Object>();
-        model = new CQPanelModel(new ValueMapDecorator(hashMap));
+    }
+
+    @Test
+    public void whenNoValueMapProvided_ShouldReturnDefaults() throws Exception {
+
+        model = new CQPanelModel();
+
+        assertThat(model.getText(), equalTo(PanelModel.DEFAULT_TEXT));
+
     }
 
     @Test
     public void whenNoTextIsAvailable_ShouldReturnACodedDefault() throws Exception {
+        model = new CQPanelModel(new ValueMapDecorator(hashMap));
+
         assertThat(model.getText(), equalTo(PanelModel.DEFAULT_TEXT));
     }
 
     @Test
     public void whenTextIsAvailable_ShouldReturnIt() throws Exception {
+        model = new CQPanelModel(new ValueMapDecorator(hashMap));
+
         hashMap.put(CQPanelModel.Properties.TEXT, "Test Text");
         assertThat(model.getText(), equalTo("Test Text"));
-
     }
 }

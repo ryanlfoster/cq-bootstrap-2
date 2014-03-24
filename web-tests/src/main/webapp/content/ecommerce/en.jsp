@@ -14,6 +14,10 @@
     <jsp:include page="/apps/ecommerce/components/panel/panel.jsp"/>
 </div>
 
+<div id="panel_2">
+    <jsp:include page="/apps/ecommerce/components/panelwithheader/panelwithheader.jsp"/>
+</div>
+
 </body>
 </html>
 
