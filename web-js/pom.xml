@@ -40,8 +40,10 @@
                 <groupId>com.day.jcr.vault</groupId>
                 <artifactId>content-package-maven-plugin</artifactId>
                 <version>0.0.20</version>
-                <executions>
-                </executions>
+                <configuration>
+                    <groupId>uk.co.smithstone.oss</groupId>
+                    <filterSource>src/main/content/META-INF/vault/filter.xml</filterSource>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.sling</groupId>

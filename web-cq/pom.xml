@@ -159,13 +159,6 @@
                         <resource>
                             <directory>../web/src/main/content/jcr_root/</directory>
                         </resource>
-                        <!--<resource>-->
-                            <!--<directory>../web/src/main/java/WEB-INF/tags/apps/${cq.app.name}/components/tags</directory>-->
-                            <!--<targetPath>/WEB-INF/tags/apps/${cq.app.name}/components/tags</targetPath>-->
-                        <!--</resource>-->
-                        <!--<resource>-->
-                            <!--<directory>../web-js/src/main/content/jcr_root/</directory>-->
-                        <!--</resource>-->
                     </webResources>
                 </configuration>
             </plugin>

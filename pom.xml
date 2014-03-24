@@ -98,39 +98,21 @@
                         <usePut>true</usePut>
                         <user>admin</user>
                         <password>admin</password>
-                        <slingUrl>http://localhost:4502/apps/ecommerce/install</slingUrl>
+                        <slingUrl>${sling.url}/libs/system/install</slingUrl>
                     </configuration>
-<!--
-                    <executions>
-                        <execution>
-                            <phase>install</phase>
-                            <goals>
-                                <goal>install</goal>
-                            </goals>
-                        </execution>
-                    </executions>
--->
                 </plugin>
                 <plugin>
                     <groupId>com.day.jcr.vault</groupId>
                     <artifactId>content-package-maven-plugin</artifactId>
                     <version>0.0.20</version>
                     <extensions>true</extensions>
-<!--
                     <executions>
-                        <execution>
-                            <phase>install</phase>
-                            <goals>
-                                <goal>install</goal>
-                            </goals>
-                        </execution>
                     </executions>
--->
                     <configuration>
                         <userId>admin</userId>
                         <failOnError>true</failOnError>
                         <password>admin</password>
-                        <targetURL>http://localhost:4502/crx/packmgr/service.jsp</targetURL>
+                        <targetURL>${crx.url}/crx/packmgr/service.jsp</targetURL>
                     </configuration>
                 </plugin>
                 <!--This plugin's configuration is used to store Eclipse
@@ -181,14 +163,26 @@
 
         <module>web-tags</module>
         <module>web-cq-tags</module>
+
     </modules>
 
 
 
     <properties>
+        <sling.host>localhost</sling.host>
+        <sling.port>4502</sling.port>
+        <sling.url>http://${sling.host}:${sling.port}</sling.url>
+
+        <crx.host>localhost</crx.host>
+        <crx.port>4502</crx.port>
+        <crx.url>http://${crx.host}:${crx.port}</crx.url>
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
         <cq.app.name>ecommerce</cq.app.name>
+
         <releaseRepository-Id>adobe-public-releases</releaseRepository-Id>
         <releaseRepository-Name>Adobe Public Releases</releaseRepository-Name>
         <releaseRepository-URL>http://repo.adobe.com/nexus/content/groups/public</releaseRepository-URL>
