@@ -3,11 +3,11 @@ package ecommerce.components;
 import ecommerce.domain.PanelModel;
 import org.jsoup.nodes.Element;
 
-class HtmlPanelModel implements PanelModel {
+public class HtmlPanelModel implements PanelModel {
 
     private Element element;
 
-    HtmlPanelModel(Element element) {
+    public HtmlPanelModel(Element element) {
         this.element = element;
     }
 

@@ -5,7 +5,7 @@ import org.jsoup.nodes.Element;
 
 public class HtmlHeadedPanelModel extends HtmlPanelModel implements HeadedPanelModel {
 
-    HtmlHeadedPanelModel(Element element) {
+    public HtmlHeadedPanelModel(Element element) {
         super(element);
     }
 
