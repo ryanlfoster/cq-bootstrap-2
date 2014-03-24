@@ -1,16 +1,11 @@
 package ecommerce.components;
 
-import ecommerce.domain.NavBarHeaderUI;
+import ecommerce.fake.FakeNavBarHeaderModel;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
@@ -41,7 +36,7 @@ public class NavBarTest {
     public void navBarShouldBeAvailable() throws Exception {
         final Document document = Jsoup.connect(page).get();
         HtmlNavBarHeaderUIModel nav = new HtmlNavBarHeaderUIModel(document.select("nav").get(0));
-        nav.getBrandHtml().assertBrand("Brand");
+        nav.getBrandHtml().assertBrand(FakeNavBarHeaderModel.NAV_BRAND);
 
     }
 

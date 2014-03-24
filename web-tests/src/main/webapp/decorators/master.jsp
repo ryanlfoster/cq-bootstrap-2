@@ -1,6 +1,10 @@
 <%@ page import="ecommerce.domain.NavBar" %>
 <%@ page import="ecommerce.domain.NavBarHeaderUI" %>
+<%@ page import="ecommerce.fake.FakeNavBarHeaderModel" %>
+<%@ page import="ecommerce.fake.FakeNavBarLink" %>
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="ecomm" uri="http://www.smithstone.com/ecommerce/tags" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,7 +26,8 @@
 <%
 
     NavBar navBar = new NavBar();
-
+    navBar.setHeader(new FakeNavBarHeaderModel());
+    navBar.setLinks(new FakeNavBarLink(true,"#" , "Link 1") , new FakeNavBarLink(false,"#" , "Link 2") , new FakeNavBarLink(false,"#" , "Link 3"));
     request.setAttribute("navbar", navBar);
 %>
 
@@ -46,9 +51,16 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Link 1</a></li>
-                <li><a href="#">Link 2</a></li>
-                <li><a href="#">Link 3</a></li>
+
+                <c:forEach items="${navbar.links}" var="link">
+                    <ecomm:activeLinkDecorator link="${link}">
+                        <li class="${activeLink}"><a href="${link.href}">${link.text}</a></li>
+                    </ecomm:activeLinkDecorator>
+                </c:forEach>
+
+                <%--<li class="active"><a href="#">Link 1</a></li>--%>
+                <%--<li><a href="#">Link 2</a></li>--%>
+                <%--<li><a href="#">Link 3</a></li>--%>
 <%--
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>

@@ -21,4 +21,16 @@
         <body-content>empty</body-content>
     </tag>
 
+    <tag>
+        <name>activeLinkDecorator</name>
+        <tag-class>ecommerce.web.tags.ActiveLinkDecoratorTag</tag-class>
+        <body-content>JSP</body-content>
+        <attribute>
+            <name>link</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>ecommerce.domain.NavBarLinkModel</type>
+        </attribute>
+    </tag>
+
 </taglib>
