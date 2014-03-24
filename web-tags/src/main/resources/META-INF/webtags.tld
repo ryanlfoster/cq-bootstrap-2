@@ -10,12 +10,6 @@
 
 
     <tag>
-        <name>productFactory</name>
-        <tag-class>ecommerce.web.tags.ProductFactoryTag</tag-class>
-        <body-content>empty</body-content>
-    </tag>
-
-    <tag>
         <name>panelFactory</name>
         <tag-class>ecommerce.web.tags.PanelFactoryTag</tag-class>
         <body-content>empty</body-content>

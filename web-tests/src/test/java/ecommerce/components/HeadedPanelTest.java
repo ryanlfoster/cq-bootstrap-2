@@ -1,18 +1,17 @@
 package ecommerce.components;
 
+import ecommerce.domain.HeadedPanel;
 import ecommerce.domain.Panel;
-import ecommerce.domain.PanelModel;
 import ecommerce.fake.FakeHeadedPanelSupportTag;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
 
-public class PanelTest {
+public class HeadedPanelTest {
 
     private String page;
 
@@ -28,10 +27,9 @@ public class PanelTest {
     @Test
     public void panelShouldBeRenderedWithDefaultText() throws Exception {
         final Document document = Jsoup.connect(page).get();
-        Panel panel = new Panel(new HtmlPanelModel(document.getElementById("panel_1")));
+        HeadedPanel panel = new HeadedPanel(new HtmlHeadedPanelModel(document.getElementById("panel_2")));
+        assertThat(panel.getModel().getHeaderText(), equalTo(FakeHeadedPanelSupportTag.HEADER_TEXT));
         assertThat(panel.getModel().getText(), equalTo(FakeHeadedPanelSupportTag.TEXT));
     }
 
-
 }
-

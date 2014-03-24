@@ -10,18 +10,19 @@ import java.io.IOException;
 
 public class HeadedPanelFactoryTag extends SimpleTagSupport {
 
-    public static String MODEL_ATTRIBUTE = "headedpanel.model";
+    public static String MODEL_FACTORY_ATTRIBUTE = "headedpanel.model";
+    public static final String HEADED_PANEL = "headedpanel";
 
 
     @Override
     public void doTag() throws JspException, IOException {
 
-        getJspContext().setAttribute("headedpanel", new HeadedPanel(
+        getJspContext().setAttribute(HEADED_PANEL, new HeadedPanel(
                 getModelInstance()), PageContext.REQUEST_SCOPE);
 
     }
 
     private HeadedPanelModel getModelInstance() {
-        return ((HeadedPanelModelFactory) getJspContext().findAttribute(MODEL_ATTRIBUTE)).getInstance();
+        return ((HeadedPanelModelFactory) getJspContext().findAttribute(MODEL_FACTORY_ATTRIBUTE)).getInstance();
     }
 }

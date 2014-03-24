@@ -8,8 +8,10 @@ import java.util.HashMap;
 
 public class ValueMapLocator {
 
+    public static final String PAGE_SCOPE_ATTRIBUTE = "properties";
+
     public static ValueMap locate(JspContext context) {
-        Object properties = context.findAttribute("properties");
+        Object properties = context.findAttribute(PAGE_SCOPE_ATTRIBUTE);
         if(properties == null) {
             return new ValueMapDecorator(new HashMap<String, Object>());
         }
