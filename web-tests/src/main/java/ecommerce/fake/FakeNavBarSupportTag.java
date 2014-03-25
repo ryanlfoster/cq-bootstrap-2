@@ -2,24 +2,14 @@ package ecommerce.fake;
 
 import ecommerce.domain.NavBarBodyModelUI;
 import ecommerce.domain.NavBarHeaderUI;
+import ecommerce.web.tags.AbstractNavBarSupportTag;
 import ecommerce.web.tags.NavBarBodyModelUIFactory;
 import ecommerce.web.tags.NavBarFactory;
-import ecommerce.web.tags.NavBarFactoryTag;
 import ecommerce.web.tags.NavBarHeaderUIFactory;
 
-import javax.servlet.jsp.JspException;
-import javax.servlet.jsp.PageContext;
-import javax.servlet.jsp.tagext.SimpleTagSupport;
-import java.io.IOException;
-
-public class FakeNavBarSupportTag extends SimpleTagSupport {
-
+public class FakeNavBarSupportTag extends AbstractNavBarSupportTag {
 
     @Override
-    public void doTag() throws JspException, IOException {
-        getJspContext().setAttribute(NavBarFactoryTag.NAV_FACTORY,getNavBarFactory(), PageContext.REQUEST_SCOPE);
-    }
-
     protected NavBarFactory getNavBarFactory() {
         return new NavBarFactory() {
             @Override

@@ -2,24 +2,17 @@
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Dialog"
     height="200"
-    title="My Container"
+    title="Bootstrap Nav Bar Config"
     width="200"
-    xtype="ecommercedialog">
+    xtype="dialog">
     <items
         jcr:primaryType="cq:Widget"
         xtype="tabpanel">
         <items jcr:primaryType="cq:WidgetCollection">
             <tab1
                 jcr:primaryType="cq:Panel"
-                title="Tab 1">
-                <items jcr:primaryType="cq:WidgetCollection">
-                    <tabs
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Tabs"
-                        labelField="Tabs :"
-                        name="./tabs"
-                        xtype="multifield"/>
-                </items>
+                title="Nav Configuation">
+
             </tab1>
         </items>
     </items>

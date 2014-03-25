@@ -8,13 +8,6 @@
     <short-name>smithstone-ecommerce-tags</short-name>
     <uri>http://www.smithstone.com/ecommerce/cq-tags</uri>
 
-
-    <tag>
-        <name>productSupportTag</name>
-        <tag-class>ecommerce.web.tags.cq.CQProductSupportTag</tag-class>
-        <body-content>empty</body-content>
-    </tag>
-
     <tag>
         <name>panelSupportTag</name>
         <tag-class>ecommerce.web.tags.cq.CQPanelSupportTag</tag-class>
@@ -26,5 +19,11 @@
         <tag-class>ecommerce.web.tags.cq.CQHeadedPanelSupportTag</tag-class>
         <body-content>empty</body-content>
     </tag>
+    <tag>
+        <name>navBarSupportTag</name>
+        <tag-class>ecommerce.web.tags.cq.CQNavBarSupportTag</tag-class>
+        <body-content>empty</body-content>
+    </tag>
+
 
 </taglib>
