@@ -7,14 +7,16 @@
         cq:lastModifiedBy="admin"
         jcr:primaryType="nt:unstructured"
         jcr:title="Ecommerce Bootstrap Design"
+        components="[group:Ecommerce Bootstrap, group:General]"
         sling:resourceType="wcm/core/components/designer">
-        <master jcr:primaryType="nt:unstructured">
+        <master jcr:primaryType="nt:unstructured"
+                >
             <par
                 jcr:lastModified="{Date}2014-03-18T19:03:03.341+11:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="foundation/components/parsys"
-                components="[group:Ecommerce Bootstrap]">
+                components="[group:Ecommerce Bootstrap, group:General]">
                 <section jcr:primaryType="nt:unstructured"/>
             </par>
         </master>

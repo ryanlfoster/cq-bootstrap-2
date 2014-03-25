@@ -8,6 +8,7 @@ import ecommerce.web.tags.NavBarFactoryTag;
 import ecommerce.web.tags.NavBarHeaderUIFactory;
 
 import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.PageContext;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 import java.io.IOException;
 
@@ -16,37 +17,36 @@ public class FakeNavBarSupportTag extends SimpleTagSupport {
 
     @Override
     public void doTag() throws JspException, IOException {
+        getJspContext().setAttribute(NavBarFactoryTag.NAV_FACTORY,getNavBarFactory(), PageContext.REQUEST_SCOPE);
+    }
 
-        getJspContext().setAttribute(NavBarFactoryTag.NAV_FACTORY,
-
-                new NavBarFactory() {
+    protected NavBarFactory getNavBarFactory() {
+        return new NavBarFactory() {
+            @Override
+            public NavBarHeaderUIFactory getHeaderFactory() {
+                return new NavBarHeaderUIFactory() {
                     @Override
-                    public NavBarHeaderUIFactory getHeaderFactory() {
-                        return new NavBarHeaderUIFactory() {
-                            @Override
-                            public NavBarHeaderUI getInstance() {
-                                return new FakeNavBarHeaderModel();
-                            }
-                        };
+                    public NavBarHeaderUI getInstance() {
+                        return new FakeNavBarHeaderModel();
                     }
+                };
+            }
 
+            @Override
+            public NavBarBodyModelUIFactory getBodyFactory() {
+                return new NavBarBodyModelUIFactory() {
                     @Override
-                    public NavBarBodyModelUIFactory getBodyFactory() {
-                        return new NavBarBodyModelUIFactory() {
-                            @Override
-                            public NavBarBodyModelUI getInstance() {
-                                return new FakeNavBarBody(
+                    public NavBarBodyModelUI getInstance() {
+                        return new FakeNavBarBody(
 
-                                        new FakeNavBarLink(true, "#", "Link 1"),
-                                        new FakeNavBarLink(false, "#", "Link 2"),
-                                        new FakeNavBarLink(false, "#", "Link 3")
+                                new FakeNavBarLink(true, "#", "Link 1"),
+                                new FakeNavBarLink(false, "#", "Link 2"),
+                                new FakeNavBarLink(false, "#", "Link 3")
 
-
-                                );
-                            }
-                        };
+                        );
                     }
-                }
-        );
+                };
+            }
+        };
     }
 }
