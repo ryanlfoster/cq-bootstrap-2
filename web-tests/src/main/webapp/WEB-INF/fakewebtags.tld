@@ -24,6 +24,11 @@
         <tag-class>ecommerce.fake.FakeLoremImpsumHeadedPanelSupportTag</tag-class>
         <body-content>empty</body-content>
     </tag>
+    <tag>
+        <name>navBarSupportTag</name>
+        <tag-class>ecommerce.fake.FakeNavBarSupportTag</tag-class>
+        <body-content>empty</body-content>
+    </tag>
 
 
 </taglib>

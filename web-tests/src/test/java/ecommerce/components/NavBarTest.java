@@ -55,9 +55,6 @@ public class NavBarTest {
         final Document document = Jsoup.connect(page).timeout(10000).get();
         HtmlNavBarHeaderUIModel nav = new HtmlNavBarHeaderUIModel(document.select("nav").get(0));
         Element target = nav.select(nav.getToogleButton().getCollapseTarget());
-
-
-
         assertNotNull(target);
     }
 

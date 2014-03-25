@@ -9,6 +9,9 @@ public class NavBar {
     private NavBarHeaderUI header;
     private List<NavBarLinkModel> links;
 
+    private NavBarBodyModelUI body;
+
+
     public NavBar() {
         header = new NavBarHeaderUI() {
             @Override
@@ -20,8 +23,21 @@ public class NavBar {
 
     }
 
+    public NavBar(NavBarBodyModelUI body, NavBarHeaderUI header) {
+        this.body = body;
+        this.header = header;
+    }
+
     public NavBarHeaderUI getHeader() {
         return header;
+    }
+
+    public NavBarBodyModelUI getBody() {
+        return body;
+    }
+
+    public void setBody(NavBarBodyModelUI body) {
+        this.body = body;
     }
 
     public void setHeader(NavBarHeaderUI header) {
