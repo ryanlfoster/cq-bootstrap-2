@@ -26,7 +26,7 @@ public class NavBarTest {
 
     @Test
     public void confirmNavBarHeaderStructure() throws Exception {
-        final Document document = Jsoup.connect(page).get();
+        final Document document = Jsoup.connect(page).timeout(10000).get();
         HtmlNavBarHeaderUIModel nav = new HtmlNavBarHeaderUIModel(document.select("nav").get(0));
         nav.getToogleButton().assertValidStructure();
     }
@@ -34,7 +34,7 @@ public class NavBarTest {
 
     @Test
     public void navBarShouldBeAvailable() throws Exception {
-        final Document document = Jsoup.connect(page).timeout(5).get();
+        final Document document = Jsoup.connect(page).timeout(10000).get();
         HtmlNavBarHeaderUIModel nav = new HtmlNavBarHeaderUIModel(document.select("nav").get(0));
         nav.getBrandHtml().assertBrand(FakeNavBarHeaderModel.NAV_BRAND);
 
@@ -43,7 +43,7 @@ public class NavBarTest {
     @Test
     public void navBarShouldHaveNavBarCollapseAndTargetShouldExist() throws Exception {
 
-        final Document document = Jsoup.connect(page).timeout(5).get();
+        final Document document = Jsoup.connect(page).timeout(10000).get();
         HtmlNavBarHeaderUIModel nav = new HtmlNavBarHeaderUIModel(document.select("nav").get(0));
         HtmlNavBarCollapseTarget target = nav.getToogleButton().getCollapseTarget();
         assertThat(target.getTargetId(), equalTo("#bs-example-navbar-collapse-1"));
@@ -52,7 +52,7 @@ public class NavBarTest {
     @Test
     public void confirmToggleButtonTargetExists() throws Exception {
 
-        final Document document = Jsoup.connect(page).timeout(5).get();
+        final Document document = Jsoup.connect(page).timeout(10000).get();
         HtmlNavBarHeaderUIModel nav = new HtmlNavBarHeaderUIModel(document.select("nav").get(0));
         Element target = nav.select(nav.getToogleButton().getCollapseTarget());
 
@@ -64,7 +64,7 @@ public class NavBarTest {
     @Test
     public void navHasRequiredNumberOfLinks() throws Exception {
 
-        final Document document = Jsoup.connect(page).get();
+        final Document document = Jsoup.connect(page).timeout(10000).get();
         HtmlNavBarHeaderUIModel nav = new HtmlNavBarHeaderUIModel(document.select("nav").get(0));
         HTMLNavBarLinks links = nav.getLinks();
         assertThat(links.size(), equalTo(3));

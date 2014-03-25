@@ -8,6 +8,8 @@ import org.jsoup.nodes.Document;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.concurrent.TimeUnit;
+
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
 
@@ -26,7 +28,7 @@ public class HeadedPanelTest {
 
     @Test
     public void panelShouldBeRenderedWithDefaultText() throws Exception {
-        final Document document = Jsoup.connect(page).timeout(5).get();
+        final Document document = Jsoup.connect(page).timeout(10000).get();
         HeadedPanel panel = new HeadedPanel(new HtmlHeadedPanelModel(document.getElementById("panel_2")));
         assertThat(panel.getModel().getHeaderText(), equalTo(FakeHeadedPanelSupportTag.HEADER_TEXT));
         assertThat(panel.getModel().getText(), equalTo(FakeHeadedPanelSupportTag.TEXT));

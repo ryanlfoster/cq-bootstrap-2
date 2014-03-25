@@ -27,7 +27,7 @@ public class PanelTest {
 
     @Test
     public void panelShouldBeRenderedWithDefaultText() throws Exception {
-        final Document document = Jsoup.connect(page).timeout(5).get();
+        final Document document = Jsoup.connect(page).timeout(10000).get();
         Panel panel = new Panel(new HtmlPanelModel(document.getElementById("panel_1")));
         assertThat(panel.getModel().getText(), equalTo(FakeHeadedPanelSupportTag.TEXT));
     }
