@@ -3,7 +3,7 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:designPath="/etc/designs/ecommerce"
-        cq:lastModified="{Date}2014-03-24T14:08:57.307+11:00"
+        cq:lastModified="{Date}2014-03-26T19:55:37.037+11:00"
         cq:lastModifiedBy="admin"
         cq:template="/apps/ecommerce/templates/master"
         jcr:primaryType="cq:PageContent"
