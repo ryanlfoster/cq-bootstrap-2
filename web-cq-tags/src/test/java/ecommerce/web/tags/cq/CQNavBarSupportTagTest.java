@@ -61,12 +61,7 @@ public class CQNavBarSupportTagTest {
 
         assertThat(header.getBrand(), equalTo("Ecommerce Bootstrap"));
         NavBarBodyModelUI body = factory.getBodyFactory().getInstance();
-        assertThat(body.getLinks().size(), equalTo(0));
-
-
-//        assertLink(body.getLinks().get(0), false, "http://www.google.com.au", "-");
-//        assertLink(body.getLinks().get(1), true, "http://www.google.com", "");
-//        assertLink(body.getLinks().get(2), false, "http://www.google.co.uk", "");
+        assertThat(body.getLinks().size(), equalTo(3));
 
     }
 
@@ -94,7 +89,7 @@ public class CQNavBarSupportTagTest {
 
         resourceResolver.create(links,
                 "link_1", new HashMap<String, Object>() {{
-                    put("active", true);
+                    put("active", "true");
                     put("href", "http://www.google.com");
                     put("sling:resourceType", "ecommerce/components/navbarlink");
 
@@ -102,14 +97,14 @@ public class CQNavBarSupportTagTest {
         );
         resourceResolver.create(links,
                 "link_2", new HashMap<String, Object>() {{
-                    put("active", false);
+                    put("active", "false");
                     put("href", "http://www.google.co.uk");
                     put("sling:resourceType", "ecommerce/components/navbarlink");
                 }}
         );
         resourceResolver.create(links,
                 "link_3", new HashMap<String, Object>() {{
-                    put("active", false);
+                    put("active", "false");
                     put("href", "http://www.google.com.au");
                     put("text", "-");
                     put("sling:resourceType", "ecommerce/components/navbarlink");

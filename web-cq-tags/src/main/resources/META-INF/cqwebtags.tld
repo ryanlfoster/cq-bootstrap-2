@@ -24,6 +24,11 @@
         <tag-class>ecommerce.web.tags.cq.CQNavBarSupportTag</tag-class>
         <body-content>empty</body-content>
     </tag>
+    <tag>
+        <name>designModeTag</name>
+        <tag-class>ecommerce.web.tags.cq.CQDisableInDesignModeTag</tag-class>
+        <body-content>JSP</body-content>
+    </tag>
 
 
 </taglib>

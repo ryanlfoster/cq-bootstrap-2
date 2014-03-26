@@ -23,7 +23,7 @@
                         jcr:primaryType="cq:Widget"
                         fieldLabel="href"
                         name="./href"
-                        xtype="textfield"/>
+                        xtype="pathfield"/>
                     <text
                         jcr:primaryType="cq:Widget"
                         fieldLabel="Text"

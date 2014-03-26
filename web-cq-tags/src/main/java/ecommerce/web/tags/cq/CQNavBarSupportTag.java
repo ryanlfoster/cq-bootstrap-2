@@ -18,11 +18,11 @@ public class CQNavBarSupportTag extends AbstractNavBarSupportTag {
 
     @Override
     protected NavBarFactory getNavBarFactory() {
+
         final Resource resource = (Resource) getJspContext().findAttribute("resource");
 
         final ValueMap properties = resource.adaptTo(ValueMap.class);
 
-        final Iterator<Resource> links = new ArrayList<Resource>().iterator();
 
         NavBarFactory navBarFactory = new NavBarFactory() {
             @Override
@@ -50,15 +50,16 @@ public class CQNavBarSupportTag extends AbstractNavBarSupportTag {
                             @Override
                             public List<NavBarLinkModel> getLinks() {
                                 ArrayList<NavBarLinkModel> list = new ArrayList<NavBarLinkModel>();
+                                Iterator<Resource> links = resource.getChild("links").listChildren();
 
                                 while (links.hasNext()) {
                                     Resource next = links.next();
                                     final ValueMap valueMap = next.adaptTo(ValueMap.class);
-                                    new NavBarLinkModel() {
+                                    NavBarLinkModel link = new NavBarLinkModel() {
 
                                         @Override
                                         public boolean isActive() {
-                                            return Boolean.parseBoolean(valueMap.get("active", String.class));
+                                            return Boolean.parseBoolean(valueMap.get("active", "false"));
                                         }
 
                                         @Override
@@ -71,7 +72,10 @@ public class CQNavBarSupportTag extends AbstractNavBarSupportTag {
                                             return valueMap.get("text", "-");
                                         }
                                     };
+
+                                    list.add(link);
                                 }
+
 
                                 return list;
                             }

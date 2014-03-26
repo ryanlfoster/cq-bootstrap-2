@@ -2,5 +2,5 @@
 
 <%@ taglib prefix="ecomm-cq" uri="http://www.smithstone.com/ecommerce/cq-tags" %>
 
-<span>Link PlaceHolder</span>
+<li><a href="#">Text 1</a></li>
 
