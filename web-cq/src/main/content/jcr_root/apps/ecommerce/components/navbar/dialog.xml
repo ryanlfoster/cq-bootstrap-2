@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="200"
+    title="Bootstrap Nav Bar Config"
+    width="200"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <tab1
+                jcr:primaryType="cq:Panel"
+                title="Nav Configuation">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <brand
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Links"
+                        name="./brand"
+                        xtype="textfield"/>
+                    <links
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Links"
+                        name="./tabs"
+                        xtype="multifield">
+                        <fieldConfig
+                            jcr:primaryType="cq:Widget"
+                            xtype="textfield"/>
+                    </links>
+                </items>
+            </tab1>
+        </items>
+    </items>
+</jcr:root>

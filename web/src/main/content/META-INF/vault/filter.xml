@@ -3,7 +3,9 @@
     <filter root="/apps/ecommerce/components/ssproduct/non-cq/"/>
     <filter root="/apps/ecommerce/components/tabpanel/non-cq/"/>
     <filter root="/apps/ecommerce/components/panelwithheader/non-cq/"/>
+    <filter root="/apps/ecommerce/components/navbar/non-cq/"/>
     <filter root="/apps/ecommerce/components/templates/master/non-cq/"/>
     <filter root="/apps/ecommerce/components/tags"/>
+    <!--<filter root="/apps/ecommerce/components/tags/nav"/>-->
     <filter root="/etc/designs/ecommerce/style"/>
 </workspaceFilter>

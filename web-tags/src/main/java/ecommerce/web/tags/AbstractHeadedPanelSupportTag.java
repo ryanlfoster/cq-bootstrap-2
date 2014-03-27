@@ -9,7 +9,7 @@ public abstract class AbstractHeadedPanelSupportTag extends SimpleTagSupport {
 
     @Override
     public void doTag() throws JspException, IOException {
-        getJspContext().setAttribute(HeadedPanelFactoryTag.MODEL_ATTRIBUTE, getModelFactory(), PageContext.REQUEST_SCOPE);
+        getJspContext().setAttribute(HeadedPanelFactoryTag.MODEL_FACTORY_ATTRIBUTE, getModelFactory(), PageContext.REQUEST_SCOPE);
     }
 
     abstract protected HeadedPanelModelFactory getModelFactory();
