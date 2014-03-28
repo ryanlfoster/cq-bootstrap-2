@@ -4,5 +4,5 @@
     jcr:description="Nav Bar Link"
     jcr:primaryType="cq:Component"
     jcr:title="Nav Bar Link"
-    allowedParents="[ecommerce/components/navbarlinks]"
+    allowedParents="[ecommerce/components/navbarlinks, ecommerce/components/navbar]"
     componentGroup="Ecommerce Bootstrap"/>

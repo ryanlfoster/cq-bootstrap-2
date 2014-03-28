@@ -1,34 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Dialog"
-    height="200"
-    title="Bootstrap Nav Bar Config"
-    width="200"
+    activeTab="0"
+    allowBlank="{Boolean}false"
+    fileName="dialog.xml"
+    hideLabel="{Boolean}false"
+    title="Multi Links"
     xtype="dialog">
-    <items
-        jcr:primaryType="cq:Widget"
-        xtype="tabpanel">
-        <items jcr:primaryType="cq:WidgetCollection">
-            <tab1
-                jcr:primaryType="cq:Panel"
-                title="Nav Configuation">
-                <items jcr:primaryType="cq:WidgetCollection">
-                    <brand
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Links"
-                        name="./brand"
-                        xtype="textfield"/>
-                    <links
-                        jcr:primaryType="cq:Widget"
-                        fieldLabel="Links"
-                        name="./tabs"
-                        xtype="multifield">
-                        <fieldConfig
+    <items jcr:primaryType="cq:WidgetCollection">
+        <tabs jcr:primaryType="cq:TabPanel">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <MultiLinks
+                    jcr:primaryType="cq:Widget"
+                    title="Multi Links">
+                    <items jcr:primaryType="cq:WidgetCollection">
+                        <brand
                             jcr:primaryType="cq:Widget"
+                            fieldLabel="Links"
+                            name="./brand"
                             xtype="textfield"/>
-                    </links>
-                </items>
-            </tab1>
-        </items>
+                        <links
+                            jcr:primaryType="cq:Widget"
+                            allowBlank="{Boolean}true"
+                            hideLabel="{Boolean}false"
+                            matchBaseName="{Boolean}false"
+                            name="./links"
+                            prefix="./"
+                            xtype="multicompositefield">
+                            <fieldConfigs jcr:primaryType="cq:WidgetCollection">
+                                <linkPath
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}true"
+                                    escapeAmp="{Boolean}false"
+                                    fieldLabel="Link Path"
+                                    hideLabel="{Boolean}false"
+                                    hideTrigger="{Boolean}false"
+                                    name="href"
+                                    parBrowse="{Boolean}false"
+                                    rootPath="/"
+                                    rootTitle="Websites"
+                                    showTitleInTree="{Boolean}true"
+                                    xtype="pathfield"/>
+                                <linkText
+                                    jcr:primaryType="cq:Widget"
+                                    allowBlank="{Boolean}true"
+                                    fieldLabel="Link Text"
+                                    hideLabel="{Boolean}false"
+                                    name="text"
+                                    xtype="textfield"/>
+                            </fieldConfigs>
+                        </links>
+                    </items>
+                </MultiLinks>
+            </items>
+        </tabs>
     </items>
 </jcr:root>

@@ -11,14 +11,12 @@ public class CQDisableInDesignModeTag extends TagSupport {
     @Override
     public int doStartTag() throws JspException {
 
+        SlingHttpServletRequest request = SlingRequestLocator.locate(pageContext);
 
-        SlingHttpServletRequest request = (SlingHttpServletRequest) pageContext.findAttribute("slingRequest");
+        return areWeInPublishMode(request) ? SKIP_BODY : EVAL_BODY_INCLUDE;
+    }
 
-        WCMMode wcmMode = WCMMode.fromRequest(request);
-
-        if(WCMMode.DISABLED == wcmMode)
-            return SKIP_BODY;
-
-        return EVAL_BODY_INCLUDE;
+    private boolean areWeInPublishMode(SlingHttpServletRequest request) {
+        return WCMMode.DISABLED == WCMMode.fromRequest(request);
     }
 }

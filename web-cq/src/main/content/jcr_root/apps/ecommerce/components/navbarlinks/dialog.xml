@@ -7,7 +7,5 @@
     xtype="dialog">
     <items
         jcr:primaryType="cq:Widget"
-        xtype="tabpanel">
-        <items jcr:primaryType="cq:WidgetCollection"/>
-    </items>
+        xtype="tabpanel"/>
 </jcr:root>
