@@ -13,22 +13,22 @@ import static org.junit.Assert.assertThat;
 public class ActiveLinkDecoratorTagTest {
 
 
-    private NavBarLinkModel mock;
+    private NavBarLinkModel link;
 
     @Test
     public void whenLinkIsNotActiveActiveLinkShouldBeEmptyString() throws Exception {
 
-        mock = Mockito.mock(NavBarLinkModel.class);
-        Mockito.when(mock.isActive()).thenReturn(false);
-        assertTag(mock, "");
+        link = Mockito.mock(NavBarLinkModel.class);
+        Mockito.when(link.isActive()).thenReturn(false);
+        assertTag(link, "");
     }
 
     @Test
     public void whenLinkActiveActiveLinkShouldBeCssClassName() throws Exception {
 
-        mock = Mockito.mock(NavBarLinkModel.class);
-        Mockito.when(mock.isActive()).thenReturn(true);
-        assertTag(mock, "active");
+        link = Mockito.mock(NavBarLinkModel.class);
+        Mockito.when(link.isActive()).thenReturn(true);
+        assertTag(link, "active");
     }
 
 

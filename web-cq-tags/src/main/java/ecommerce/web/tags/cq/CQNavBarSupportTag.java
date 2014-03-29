@@ -19,8 +19,8 @@ public class CQNavBarSupportTag extends AbstractNavBarSupportTag {
     @Override
     protected NavBarFactory getNavBarFactory() {
 
-        final Resource resource = (Resource) getJspContext().findAttribute("resource");
 
+        final Resource resource = ResourceLocator.locate(getJspContext());
         final ValueMap properties = resource.adaptTo(ValueMap.class);
 
 
@@ -43,61 +43,62 @@ public class CQNavBarSupportTag extends AbstractNavBarSupportTag {
 
             @Override
             public NavBarBodyModelUIFactory getBodyFactory() {
-                return new NavBarBodyModelUIFactory() {
-                    @Override
-                    public NavBarBodyModelUI getInstance() {
-                        return new NavBarBodyModelUI() {
-                            @Override
-                            public List<NavBarLinkModel> getLinks() {
-                                ArrayList<NavBarLinkModel> list = new ArrayList<NavBarLinkModel>();
-                                Iterator<Resource> links = resource.getChild("links").listChildren();
-
-                                while (links.hasNext()) {
-                                    Resource next = links.next();
-                                    final ValueMap valueMap = next.adaptTo(ValueMap.class);
-                                    NavBarLinkModel link = new NavBarLinkModel() {
-
-                                        @Override
-                                        public boolean isActive() {
-                                            return Boolean.parseBoolean(valueMap.get("active", "false"));
-                                        }
-
-                                        @Override
-                                        public String getHref() {
-                                            return valueMap.get("href", "#");
-                                        }
-
-                                        @Override
-                                        public String getText() {
-                                            return valueMap.get("text", "-");
-                                        }
-                                    };
-
-                                    list.add(link);
-                                }
-
-
-                                return list;
-                            }
-
-                            @Override
-                            public String getId() {
-                                return "bs-example-navbar-collapse-1";
-                            }
-                        };
-                    }
-                };
+                return getLinks(resource);
             }
         };
 
 
         return navBarFactory;
 
-/*
-        return new CQNavBarFactory(
-                resource.getResourceResolver().resolve(resource.getPath() + "/jcr:content/par/navbar"));
-*/
+    }
+
+    private NavBarBodyModelUIFactory getLinks(final Resource resource) {
+        return new NavBarBodyModelUIFactory() {
+            @Override
+            public NavBarBodyModelUI getInstance() {
+                return new NavBarBodyModelUI() {
+                    @Override
+                    public List<NavBarLinkModel> getLinks() {
+                        ArrayList<NavBarLinkModel> list = new ArrayList<NavBarLinkModel>();
+                        Iterator<Resource> links = resource.getChild("links").listChildren();
+
+                        while (links.hasNext()) {
+
+                            list.add(getNavBarLinkModel(links));
+                        }
 
 
+                        return list;
+                    }
+
+                    @Override
+                    public String getId() {
+                        return "bs-example-navbar-collapse-1";
+                    }
+                };
+            }
+        };
+    }
+
+    private NavBarLinkModel getNavBarLinkModel(Iterator<Resource> links) {
+        Resource next = links.next();
+        final ValueMap valueMap = next.adaptTo(ValueMap.class);
+        return new NavBarLinkModel() {
+
+            @Override
+            public boolean isActive() {
+                return Boolean.parseBoolean(valueMap.get("active", "false"));
+            }
+
+            @Override
+            public String getHref() {
+                return valueMap.get("href", "#");
+            }
+
+            @Override
+            public String getText() {
+                return valueMap.get("text", "-");
+            }
+        };
     }
 }
