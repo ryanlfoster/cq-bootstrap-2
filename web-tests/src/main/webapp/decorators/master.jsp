@@ -1,4 +1,9 @@
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="bootstrap-nav" tagdir="/WEB-INF/tags/apps/ecommerce/components/tags/nav" %>
+
+<%@ taglib prefix="ecomm-fake" uri="http://www.smithstone.com/ecommerce/fake-tags" %>
+<%@ taglib prefix="bootstrap" uri="http://www.smithstone.com/ecommerce/tags" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,21 +16,30 @@
     <style>
         body {
 
-            margin-top: 60px;
         }
     </style>
 
 </head>
 <body>
 
+<ecomm-fake:navBarSupportTag/>
 
 
 <div class="container">
 
+    <bootstrap-nav:container>
+
+        <bootstrap-nav:header />
+
+        <bootstrap-nav:body/>
+
+    </bootstrap-nav:container>
+
+
+
     <decorator:body/>
 
 </div>
-
 
 
 <jsp:include page="/apps/ecommerce/components/templates/master/non-cq/extrabody.jsp"/>
