@@ -9,9 +9,9 @@
 <head>
     <title><decorator:title/></title>
 
-    <decorator:head/>
 
     <jsp:include page="/apps/ecommerce/components/templates/master/non-cq/extrahead.jsp"/>
+    <decorator:head/>
 
     <style>
         body {
@@ -25,7 +25,7 @@
 <ecomm-fake:navBarSupportTag/>
 
 
-<div class="container">
+<div class="container" ng-app="ecommerce">
 
     <bootstrap-nav:container>
 
@@ -36,13 +36,19 @@
     </bootstrap-nav:container>
 
 
-
     <decorator:body/>
 
 </div>
 
 
+
+
 <jsp:include page="/apps/ecommerce/components/templates/master/non-cq/extrabody.jsp"/>
+
+
+
+
+
 
 </body>
 </html>

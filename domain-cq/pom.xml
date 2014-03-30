@@ -193,13 +193,17 @@
                 <artifactId>maven-bundle-plugin</artifactId>
                 <extensions>true</extensions>
                 <configuration>
-                    <Bundle-Name>Ecommerce CQ Domain Bundle</Bundle-Name>
-                    <Export-Package>
-                        ecommerce.domain.cq.*
-                    </Export-Package>
-                    <Import-Package>
-                        ecommerce.domain.*
-                    </Import-Package>
+                    <instructions>
+                        <Bundle-Name>Ecommerce CQ Domain Bundle</Bundle-Name>
+                        <Export-Package>
+                            ecommerce.domain.cq.*
+                        </Export-Package>
+                        <Import-Package>
+                            ecommerce.domain.*,
+                            org.apache.sling.api.resource,
+                            org.apache.sling.api.wrappers
+                        </Import-Package>
+                    </instructions>
                 </configuration>
             </plugin>
             <plugin>

@@ -40,6 +40,11 @@
         <tag-class>ecommerce.web.tags.NavBarFactoryTag</tag-class>
         <body-content>empty</body-content>
     </tag>
+    <tag>
+        <name>productsToJsonTag</name>
+        <tag-class>ecommerce.web.tags.ProductsToJsonTag</tag-class>
+        <body-content>empty</body-content>
+    </tag>
 
 
 </taglib>

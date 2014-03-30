@@ -1,5 +1,5 @@
 
-(function(ecomm){
+(function (ecomm) {
 
     ecomm.controller("LoginController", function($scope){
 

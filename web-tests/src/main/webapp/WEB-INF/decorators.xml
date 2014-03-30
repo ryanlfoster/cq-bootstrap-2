@@ -4,5 +4,8 @@
     <decorator name="master" page="master.jsp">
         <pattern>/content/ecommerce/en.jsp</pattern>
     </decorator>
+    <decorator name="master" page="master.jsp">
+        <pattern>/content/ecommerce/en/**</pattern>
+    </decorator>
 
 </decorators>

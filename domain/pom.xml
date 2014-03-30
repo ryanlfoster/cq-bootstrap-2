@@ -31,10 +31,12 @@
                 <artifactId>maven-bundle-plugin</artifactId>
                 <extensions>true</extensions>
                 <configuration>
-                    <Bundle-Name>Ecommerce Domain Bundle</Bundle-Name>
-                    <Export-Package>
-                        ecommerce.domain.*
-                    </Export-Package>
+                    <instructions>
+                        <Bundle-Name>Ecommerce Domain Bundle</Bundle-Name>
+                        <Export-Package>
+                            ecommerce.domain.*
+                        </Export-Package>
+                    </instructions>
                 </configuration>
             </plugin>
             <plugin>
