@@ -20,6 +20,9 @@
     <filter root="/etc/designs/ecommerce">
             <exclude pattern="/etc/designs/ecommerce/javascript"/>
             <exclude pattern="/etc/designs/ecommerce/style"/>
+            <exclude pattern="/etc/designs/ecommerce/less"/>
+            <exclude pattern="/etc/designs/ecommerce/scss"/>
+            <exclude pattern="/etc/designs/ecommerce/templates"/>
     </filter>
 
     <filter root="/content/ecommerce"/>
