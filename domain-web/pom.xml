@@ -13,6 +13,7 @@
     <artifactId>domain-web</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>Ecommerce Bootstrap Domain Web Bundle</name>
+    <packaging>bundle</packaging>
 
     <dependencies>
         <dependency>
@@ -20,6 +21,61 @@
             <artifactId>domain</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-core-asl</artifactId>
+            <version>1.9.12</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.12</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+        </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-scr-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>generate-scr-descriptor</id>
+                        <goals>
+                            <goal>scr</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-Name>Ecommerce Domain Web Bundle</Bundle-Name>
+                        <Export-Package>
+                            ecommerce.cart.web.*,
+                            ecommerce.domain.web.*,
+                        </Export-Package>
+                        <Import-Package>
+                            ecommerce.domain,
+                            ecommerce.cart,
+                            javax.servlet.http,
+                            *
+                        </Import-Package>
+                        <Embed-Dependency>jackson-core-asl,jackson-mapper-asl</Embed-Dependency>
+                    </instructions>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
 
 </project>

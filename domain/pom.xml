@@ -34,7 +34,8 @@
                     <instructions>
                         <Bundle-Name>Ecommerce Domain Bundle</Bundle-Name>
                         <Export-Package>
-                            ecommerce.domain.*
+                            ecommerce.domain.*,
+                            ecommerce.cart.*,
                         </Export-Package>
                     </instructions>
                 </configuration>

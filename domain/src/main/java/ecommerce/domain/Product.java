@@ -1,4 +1,4 @@
-package ecommerce.web.servlets;
+package ecommerce.domain;
 
 public class Product {
 
@@ -8,7 +8,7 @@ public class Product {
     public String sku;
     private double cost;
 
-    Product() {
+    public Product() {
     }
 
     public String getSku() {
