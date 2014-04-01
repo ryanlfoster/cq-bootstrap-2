@@ -1,20 +1,18 @@
 /*global ecommerce: true */
 /*global alert: true */
 
-
-(function (ecomm) {
+(function (ec) {
     'use strict';
-    ecomm.directive('productTile', function (){
+    ec.directive('productTile', function(){
         return {
+            restrict: 'E',
+            transclude: true,
             scope: {
-                product: "=product"
-
+                product: "=",
+                cart : "="
             },
-            restrict: 'AE',
-            templateUrl: '/etc/designs/ecommerce/templates/productTile.html',
-            replace : true,
-
-
+            replace : true ,
+            templateUrl: '/etc/designs/ecommerce/templates/product.html'
         };
     });
 }(ecommerce));

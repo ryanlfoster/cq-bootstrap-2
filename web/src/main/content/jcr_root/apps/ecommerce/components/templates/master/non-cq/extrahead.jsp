@@ -9,6 +9,10 @@
 
 <script src="/etc/designs/ecommerce/javascript/main.js"></script>
 
+<script src="/etc/designs/ecommerce/javascript/lib/services/product_service.js"></script>
+<script src="/etc/designs/ecommerce/javascript/lib/services/cart_service.js"></script>
+
+<%--<script src="/etc/designs/ecommerce/"></script>--%>
 <script src="/etc/designs/ecommerce/javascript/lib/controllers/product_controller.js"></script>
 <script src="/etc/designs/ecommerce/javascript/lib/directives/productTile.js"></script>
 <script src="/etc/designs/ecommerce/javascript/lib/directives/panel.js"></script>

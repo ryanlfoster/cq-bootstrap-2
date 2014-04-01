@@ -13,6 +13,8 @@
     <jsp:include page="/apps/ecommerce/components/templates/master/non-cq/extrahead.jsp"/>
     <decorator:head/>
 
+
+
     <style>
         body {
 

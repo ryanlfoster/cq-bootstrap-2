@@ -4,14 +4,13 @@
 
 (function (ecomm) {
     'use strict';
-    ecomm.controller('ProductsController', ['$scope', function ($scope) {
-        $scope.showProductInformation = function (product) {
-            alert(product);
-        };
-        $scope.addToCart = function (product) {
-            alert(product);
-        };
-        $scope.products = ecommerce.products.data;
+    ecomm.controller('ProductsController', ['$scope', '$http', function ($scope, $http) {
+        $scope.products = ecomm.products.data;
+
+
+        $scope.moo = function() {
+            alert('moo');
+        }
     }]);
 }(ecommerce));
 

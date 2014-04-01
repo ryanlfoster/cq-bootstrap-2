@@ -4,3 +4,4 @@
 <jsp:useBean id="panel" type="ecommerce.domain.Panel" scope="request"/>
 
 <panel body-text="${panel.model.text}"></panel>
+
