@@ -1,8 +1,9 @@
 <%@include file="/libs/foundation/global.jsp" %>
 <div ng-app="ecommerce">
-    <%--<cq:include resourceType="foundation/components/parsys" path="par"/>--%>
-    <%--<cq:include script="extrabody.jsp"/>--%>
+    <cq:include resourceType="foundation/components/parsys" path="par"/>
+    <cq:include script="extrabody.jsp"/>
 
+<%--
         <div ng-controller="CartController">
 
             <div>
@@ -38,6 +39,7 @@
                 </div>
             </div>
         </div>
+--%>
 
 
 </div>
