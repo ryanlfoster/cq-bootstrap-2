@@ -83,6 +83,8 @@
 <script src="/etc/designs/ecommerce/javascript/lib/directives/cart-button.js"></script>
 <script src="/etc/designs/ecommerce/javascript/lib/directives/productTile.js"></script>
 <script src="/etc/designs/ecommerce/javascript/lib/directives/product_information_button.js"></script>
+<script src="/etc/designs/ecommerce/javascript/lib/directives/headedpanel.js"></script>
+<script src="/etc/designs/ecommerce/javascript/lib/directives/panel.js"></script>
 
 <script src="/etc/designs/ecommerce/javascript/lib/services/cart_service.js"></script>
 
