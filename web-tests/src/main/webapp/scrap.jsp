@@ -41,7 +41,9 @@
 
 <div class="container" ng-app="ecommerce">
 
+    <jsp:include page="/apps/ecommerce/components/templates/product/non-cq/base.jsp"/>
 
+<%--
     <div ng-controller="CartController">
 
         <div>
@@ -77,6 +79,7 @@
             </div>
         </div>
     </div>
+--%>
 </div>
 
 

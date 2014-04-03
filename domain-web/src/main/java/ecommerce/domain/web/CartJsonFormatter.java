@@ -8,6 +8,7 @@ import org.codehaus.jackson.JsonGenerator;
 
 import java.io.IOException;
 import java.io.StringWriter;
+import java.text.NumberFormat;
 import java.util.Map;
 
 public class CartJsonFormatter implements CartFormatter {
@@ -33,7 +34,7 @@ public class CartJsonFormatter implements CartFormatter {
                     jsonGenerator.writeStartObject();
                     jsonGenerator.writeStringField("code", "SKU" + next.getKey());
                     jsonGenerator.writeNumberField("quantity", n.getTotalCount());
-                    jsonGenerator.writeNumberField("totalItemCost", n.getTotalCost());
+                    jsonGenerator.writeNumberField("totalItemCost", n.getTotalCost() );
                     jsonGenerator.writeEndObject();
                 }
             }

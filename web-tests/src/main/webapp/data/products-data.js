@@ -13,7 +13,7 @@
                     "consequatur cum dolore, explicabo, inventore iste iusto magni minima mollitia omnis pariatur" +
                     "quae sequi soluta unde voluptas!",
                 image: "//placekitten.com/340/300",
-                cost : 10.00
+                cost : parseFloat(Math.random() * 100).toFixed(2)
             },
             {
                 sku : 1,
@@ -22,7 +22,7 @@
                     "consequatur cum dolore, explicabo, inventore iste iusto magni minima mollitia omnis pariatur" +
                     "quae sequi soluta unde voluptas!",
                 image: "//placekitten.com/340/300",
-                cost : 10.00
+                cost : parseFloat(Math.random() * 100).toFixed(2)
             },
             {
                 sku : 2,
@@ -31,7 +31,7 @@
                     "consequatur cum dolore, explicabo, inventore iste iusto magni minima mollitia omnis pariatur" +
                     "quae sequi soluta unde voluptas!",
                 image: "//placekitten.com/340/300",
-                cost : 10.00
+                cost : parseFloat(Math.random() * 100).toFixed(2)
             },
             {
                 sku : 3,
@@ -40,7 +40,7 @@
                     "consequatur cum dolore, explicabo, inventore iste iusto magni minima mollitia omnis pariatur" +
                     "quae sequi soluta unde voluptas!",
                 image: "//placekitten.com/340/300",
-                cost : 10.00
+                cost : parseFloat(Math.random() * 100).toFixed(2)
             },
             {
                 sku: 4,
@@ -49,7 +49,7 @@
                     "consequatur cum dolore, explicabo, inventore iste iusto magni minima mollitia omnis pariatur" +
                     "quae sequi soluta unde voluptas!",
                 image: "//placekitten.com/340/300",
-                cost : 10.00
+                cost : parseFloat(Math.random() * 100).toFixed(2)
             },
             {
                 sku : 5,
@@ -58,7 +58,7 @@
                     "consequatur cum dolore, explicabo, inventore iste iusto magni minima mollitia omnis pariatur" +
                     "quae sequi soluta unde voluptas!",
                 image: "//placekitten.com/340/300",
-                cost : 10.00
+                cost : parseFloat(Math.random() * 100).toFixed(2)
             }
         ]
 

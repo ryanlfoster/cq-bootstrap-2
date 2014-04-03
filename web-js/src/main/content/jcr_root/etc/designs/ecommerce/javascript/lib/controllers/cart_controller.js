@@ -20,9 +20,9 @@
             var ps = $scope.cart.products;
             var i = 0;
             for (; i < ps.length; i++) {
-                r += ps[i].totalItemCost;
+                r += parseFloat(ps[i].totalItemCost).toFixed(2);
             }
-            return r;
+            return parseFloat(r).toFixed(2);
         };
 
         $scope.updateCartInformation = function (cart) {

@@ -2,7 +2,7 @@
 
     <div class="container" ng-controller="CartController">
 
-        <div>
+        <div class="row">
             <div class="panel panel-info">
                 <div class="panel-heading">Cart Information</div>
 
@@ -28,7 +28,7 @@
 
 
         <div ng-controller="ProductsController">
-            <div class="row">
+            <div class="row ">
                 <div ng-repeat="product in products">
                     <product-tile product="product" cart="cart"></product-tile>
                 </div>

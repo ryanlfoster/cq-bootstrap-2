@@ -15,10 +15,6 @@ public class Product {
         return sku;
     }
 
-    public void setSku(String sku) {
-        this.sku = sku;
-    }
-
     public String getName() {
         return name;
     }
