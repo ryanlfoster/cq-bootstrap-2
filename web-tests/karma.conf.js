@@ -17,7 +17,7 @@ module.exports = function (config) {
             '../web-js/src/main/content/jcr_root/etc/designs/ecommerce/javascript/deps/jquery-1.9.1.min.js',
             '../web-js/src/main/content/jcr_root/etc/designs/ecommerce/javascript/deps/angular.js',
             'src/test/javascript/lib/jasmine-jquery-1.7.0.js',
-            '../web-js/src/main/content/jcr_root/etc/designs/ecommerce/templates/*.html',
+//            '../web-js/src/main/content/jcr_root/etc/designs/ecommerce/templates/*.html',
             '../web-js/src/main/content/jcr_root/etc/designs/ecommerce/javascript/main.js',
             '../web-js/src/main/content/jcr_root/etc/designs/ecommerce/javascript/lib/**/*.js',
             'src/test/javascript/**/*_spec.js'
