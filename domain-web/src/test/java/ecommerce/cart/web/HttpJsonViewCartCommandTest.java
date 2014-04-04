@@ -1,5 +1,6 @@
 package ecommerce.cart.web;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
@@ -10,7 +11,7 @@ import static org.junit.Assert.assertThat;
 public class HttpJsonViewCartCommandTest {
 
 
-    @Test
+    @Test @Ignore("yet to implement")
     public void xsxsx() throws Exception {
         MockHttpServletRequest request = new MockHttpServletRequest();
         MockHttpServletResponse response = new MockHttpServletResponse();
