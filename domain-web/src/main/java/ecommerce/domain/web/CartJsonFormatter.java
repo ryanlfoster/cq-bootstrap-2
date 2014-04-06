@@ -8,7 +8,6 @@ import org.codehaus.jackson.JsonGenerator;
 
 import java.io.IOException;
 import java.io.StringWriter;
-import java.text.NumberFormat;
 import java.util.Map;
 
 public class CartJsonFormatter implements CartFormatter {
@@ -20,11 +19,9 @@ public class CartJsonFormatter implements CartFormatter {
             StringWriter writer1 = new StringWriter();
             jsonGenerator = new JsonFactory().createJsonGenerator(writer1);
             jsonGenerator.writeStartObject();
-            jsonGenerator.writeStringField("id", id);
-            jsonGenerator.writeStringField("email" , "ssmithstone@me.com");
-
-
-            jsonGenerator.writeArrayFieldStart("products");
+            jsonGenerator.writeNumberField(Fields.ID, Integer.valueOf(id));
+            jsonGenerator.writeStringField(Fields.EMAIL , Cart.DEFAULT_CUSTOMER_EMAIL);
+            jsonGenerator.writeArrayFieldStart(Fields.PRODUCTS);
 
 
             if( null != cart && null != cart.getProducts()){
@@ -32,16 +29,14 @@ public class CartJsonFormatter implements CartFormatter {
                 for (Map.Entry<String, PurchaseProduct> next : cart.getProducts().entrySet()) {
                     PurchaseProduct n = next.getValue();
                     jsonGenerator.writeStartObject();
-                    jsonGenerator.writeStringField("code", "SKU" + next.getKey());
-                    jsonGenerator.writeNumberField("quantity", n.getTotalCount());
-                    jsonGenerator.writeNumberField("totalItemCost", n.getTotalCost() );
+                    jsonGenerator.writeStringField(Fields.ProductFields.CODE, "SKU" + next.getKey());
+                    jsonGenerator.writeNumberField(Fields.ProductFields.QUANTITY, n.getTotalCount());
+                    jsonGenerator.writeNumberField(Fields.ProductFields.TOTALITEMCOST, n.getTotalCost() );
                     jsonGenerator.writeEndObject();
                 }
             }
 
             jsonGenerator.writeEndArray();
-
-
             jsonGenerator.writeEndObject();
             jsonGenerator.flush();
             return writer1.toString();

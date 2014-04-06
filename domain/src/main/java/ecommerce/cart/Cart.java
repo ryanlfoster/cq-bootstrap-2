@@ -8,6 +8,8 @@ import java.util.Map;
 
 public abstract class Cart  {
 
+    public final static String DEFAULT_CUSTOMER_EMAIL = "anoncustomer@ecommerce.biz";
+
     protected abstract void store(Map<String, PurchaseProduct> products);
 
     public abstract Map<String, PurchaseProduct> getProducts();
