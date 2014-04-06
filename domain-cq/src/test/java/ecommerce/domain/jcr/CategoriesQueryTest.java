@@ -4,6 +4,7 @@ import com.day.cq.search.PredicateGroup;
 import com.day.cq.search.Query;
 import com.day.cq.search.QueryBuilder;
 import com.day.cq.search.eval.PathPredicateEvaluator;
+import com.day.cq.search.eval.TypePredicateEvaluator;
 import com.day.cq.search.impl.builder.QueryBuilderImpl;
 import com.day.cq.search.result.SearchResult;
 import com.day.crx.sling.testing.RepositoryBaseTest;
@@ -14,6 +15,8 @@ import org.apache.jackrabbit.commons.cnd.ParseException;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.jcr.api.SlingRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
@@ -29,12 +32,13 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import static org.hamcrest.CoreMatchers.equalTo;
+
+import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
 
 public class CategoriesQueryTest extends RepositoryBaseTest {
 
-
+    private static final Logger log = LoggerFactory.getLogger(CategoriesQueryTest.class);
     public static final String SLING_FOLDER = "sling:Folder";
     private Session login;
 
@@ -56,8 +60,6 @@ public class CategoriesQueryTest extends RepositoryBaseTest {
     }
 
     public void testTheQueryWeBuildFindsTheCorrectNumberOfSlingFolders() throws Exception {
-        Resource resolve = getResolverFactory().getResourceResolver(login).resolve("/etc/commerce");
-
 
         QueryBuilder queryBuilder = stubbedQueryBuilder();
         Map<String, String> predicateParameterMap = createTheQuery();
@@ -66,7 +68,7 @@ public class CategoriesQueryTest extends RepositoryBaseTest {
         assertThat(result.getHits().size(), equalTo(NUMBER_OF_SLING_FOLDERS_FOUND_IN_THE_SHOP));
         Iterator<Resource> resources = result.getResources();
         while (resources.hasNext()) {
-            System.out.println(resources.next().getPath());
+            log.debug(resources.next().getPath());
         }
 
     }
@@ -88,6 +90,7 @@ public class CategoriesQueryTest extends RepositoryBaseTest {
         predicateParameterMap.put("path", "/etc/commerce/products/aol/aolProductCatalog/en/shop");
         predicateParameterMap.put("type", SLING_FOLDER);
         predicateParameterMap.put("p.nodedepth", "1");
+        predicateParameterMap.put("p.limit", "-1");
         return predicateParameterMap;
     }
 
@@ -173,6 +176,11 @@ public class CategoriesQueryTest extends RepositoryBaseTest {
 
             @Override
             public <ComponentT> ComponentT getComponent(Class<ComponentT> typeClass, String type, Dictionary properties) {
+
+                if("path".equalsIgnoreCase(type))
+                    return (ComponentT) new PathPredicateEvaluator();
+                if("type".equals(type))
+                    return (ComponentT) new TypePredicateEvaluator();
                 return null;
             }
         };
@@ -240,7 +248,9 @@ class CQCategoryQuery implements CategoryQuery {
         Iterator<Resource> resources = execute.getResources();
         while(resources.hasNext()){
             Resource resource = resources.next();
-            System.out.println(resource.getPath());
+            log.trace(resource.getPath());
         }
     }
+
+    private static final Logger log = LoggerFactory.getLogger(CQCategoryQuery.class);
 }

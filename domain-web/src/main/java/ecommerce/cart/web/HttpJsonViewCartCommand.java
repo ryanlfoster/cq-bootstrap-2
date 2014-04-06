@@ -5,6 +5,7 @@ import ecommerce.cart.CartFormatter;
 import ecommerce.cart.ViewCartCommand;
 import ecommerce.domain.web.CartJsonFormatter;
 
+import javax.activation.MimeType;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -25,7 +26,6 @@ public class HttpJsonViewCartCommand extends ViewCartCommand {
     @Override
     protected Writer getWriter() {
         try {
-
             return response.getWriter();
         } catch (IOException e) {
             e.printStackTrace();

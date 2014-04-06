@@ -1,13 +1,14 @@
 package ecommerce.web.tags.cq;
 
 import com.day.cq.wcm.api.WCMMode;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.mock.web.*;
 
 public class CQDisableInDesignModeTagTest {
 
 
-    @Test
+    @Test @Ignore("incomplete test currently dont know the solution")
     public void bodyOfTagShouldBeRenderedWhenInDesignMode() throws Exception {
 
         CQDisableInDesignModeTag tag = new CQDisableInDesignModeTag();
@@ -18,9 +19,6 @@ public class CQDisableInDesignModeTagTest {
 
         request.setAttribute(WCMMode.REQUEST_ATTRIBUTE_NAME, WCMMode.EDIT);
 
-
-
-
         MockHttpServletResponse response = new MockHttpServletResponse();
 
 
@@ -30,20 +28,10 @@ public class CQDisableInDesignModeTagTest {
         MockBodyContent fred = new MockBodyContent("fred", response);
         context.pushBody(fred);
 
-
-
         tag.setPageContext(context);
 
         tag.doStartTag();
 
-//        tag.doAfterBody();
-
-//        tag.doEndTag();
-
-//        String contentAsString = response.getContentLength();
-        //
-//        context.getOut().println("Lo");
-        System.out.println("Content = " + response.getContentAsString() );
 
     }
 }
