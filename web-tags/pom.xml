@@ -37,6 +37,17 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <version>1.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>jsp-api</artifactId>
             <version>2.2</version>
@@ -52,6 +63,11 @@
             <artifactId>spring-test</artifactId>
             <version>3.1.2.RELEASE</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-core-asl</artifactId>
+            <version>1.9.13</version>
         </dependency>
     </dependencies>
 
@@ -74,13 +90,21 @@
                 <artifactId>maven-bundle-plugin</artifactId>
                 <extensions>true</extensions>
                 <configuration>
-                    <Bundle-Name>Ecommerce Web Tags Bundle</Bundle-Name>
-                    <Export-Package>
-                        ecommerce.web.tags.*
-                    </Export-Package>
-                    <Import-Package>
-                        ecommerce.domain.*
-                    </Import-Package>
+                    <instructions>
+
+                        <Bundle-Name>Ecommerce Web Tags Bundle</Bundle-Name>
+                        <Export-Package>
+                            ecommerce.web.tags.*,
+                        </Export-Package>
+                        <Import-Package>
+                            ecommerce.domain.*,
+                            org.codehaus.jackson.*,
+                            javax.servlet.jsp,
+                            javax.servlet.jsp.tagext
+                        </Import-Package>
+                        <!--<Bundle-ClassPath></Bundle-ClassPath>-->
+                        <Embed-Dependency>jackson-core-asl</Embed-Dependency>
+                    </instructions>
                 </configuration>
             </plugin>
             <plugin>

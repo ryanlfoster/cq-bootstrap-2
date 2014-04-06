@@ -24,5 +24,26 @@
         <filter-name>cross-origin</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+    <servlet>
+        <servlet-name>ViewCartServlet</servlet-name>
+        <servlet-class>ecommerce.web.servlets.ViewCartServlet</servlet-class>
+
+    </servlet>
+
+    <servlet>
+        <servlet-name>AddCartServlet</servlet-name>
+        <servlet-class>ecommerce.web.servlets.AddCartServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ViewCartServlet</servlet-name>
+        <url-pattern>/en.cart.view.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>AddCartServlet</servlet-name>
+        <url-pattern>/en.cart.add.do</url-pattern>
+    </servlet-mapping>
     
 </web-app>

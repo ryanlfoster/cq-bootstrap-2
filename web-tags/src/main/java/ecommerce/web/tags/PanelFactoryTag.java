@@ -1,11 +1,14 @@
 package ecommerce.web.tags;
 
 import ecommerce.domain.*;
+import org.codehaus.jackson.JsonFactory;
+import org.codehaus.jackson.JsonGenerator;
 
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.PageContext;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 import java.io.IOException;
+import java.io.StringWriter;
 
 public class PanelFactoryTag extends SimpleTagSupport {
 
@@ -18,7 +21,6 @@ public class PanelFactoryTag extends SimpleTagSupport {
 
         getJspContext().setAttribute("panel"  , new Panel(
                 getModelInstance()), PageContext.REQUEST_SCOPE);
-
     }
 
     private PanelModel getModelInstance() {

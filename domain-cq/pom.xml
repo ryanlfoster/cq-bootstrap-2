@@ -20,6 +20,12 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>domain</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>domain-web</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
@@ -171,6 +177,43 @@
             <version>5.5.24</version>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-core-asl</artifactId>
+            <version>1.9.13</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.jackrabbit</groupId>
+            <artifactId>jackrabbit-core</artifactId>
+            <version>2.7-r1481964</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.day.cq</groupId>
+            <artifactId>cq-search</artifactId>
+            <version>5.6.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.jackrabbit</groupId>
+            <artifactId>jackrabbit-api</artifactId>
+            <version>2.7.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.day.crx.sling</groupId>
+            <artifactId>com.day.crx.sling.testing</artifactId>
+            <version>2.2.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>org.apache.sling.commons.testing</artifactId>
+            <version>2.0.16</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
 
@@ -193,13 +236,22 @@
                 <artifactId>maven-bundle-plugin</artifactId>
                 <extensions>true</extensions>
                 <configuration>
-                    <Bundle-Name>Ecommerce CQ Domain Bundle</Bundle-Name>
-                    <Export-Package>
-                        ecommerce.domain.cq.*
-                    </Export-Package>
-                    <Import-Package>
-                        ecommerce.domain.*
-                    </Import-Package>
+                    <instructions>
+                        <Bundle-Name>Ecommerce CQ Domain Bundle</Bundle-Name>
+                        <Export-Package>
+                            ecommerce.domain.cq.*,
+                        </Export-Package>
+                        <Import-Package>
+                            ecommerce.domain.*,
+                            ecommerce.cart.web,
+                            org.apache.sling.api.servlets,
+                            org.apache.sling.api.resource,
+                            org.apache.sling.api.wrappers,
+                            org.apache.sling.api,
+                            javax.servlet,
+                            javax.servlet.http
+                        </Import-Package>
+                    </instructions>
                 </configuration>
             </plugin>
             <plugin>

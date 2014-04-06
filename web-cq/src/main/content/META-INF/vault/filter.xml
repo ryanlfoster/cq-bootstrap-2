@@ -2,10 +2,16 @@
 <workspaceFilter version="1.0">
 
     <filter root="/apps/ecommerce/components">
-            <exclude pattern="/apps/ecommerce/components/ssproduct/non-cq"/>
-            <exclude pattern="/apps/ecommerce/components/panelwithheader/non-cq"/>
-            <exclude pattern="/apps/ecommerce/components/tabpanel/non-cq"/>
-            <exclude pattern="/apps/ecommerce/components/tags"/>
+        <exclude pattern="/apps/ecommerce/components/ssproduct/non-cq"/>
+        <exclude pattern="/apps/ecommerce/components/panelwithheader/non-cq"/>
+        <exclude pattern="/apps/ecommerce/components/tabpanel/non-cq"/>
+        <exclude pattern="/apps/ecommerce/components/navbar/non-cq"/>
+        <exclude pattern="/apps/ecommerce/components/navbarlink/non-cq"/>
+        <exclude pattern="/apps/ecommerce/components/tags"/>
+        <exclude pattern="/apps/ecommerce/components/tags/nav"/>
+
+        <exclude pattern="/apps/ecommerce/components/templates/master/non-cq"/>
+        <exclude pattern="/apps/ecommerce/components/templates/product/non-cq"/>
     </filter>
     <filter root="/apps/foundation/components/page"/>
     <filter root="/apps/ecommerce/templates"/>
@@ -17,6 +23,9 @@
     <filter root="/etc/designs/ecommerce">
             <exclude pattern="/etc/designs/ecommerce/javascript"/>
             <exclude pattern="/etc/designs/ecommerce/style"/>
+            <exclude pattern="/etc/designs/ecommerce/less"/>
+            <exclude pattern="/etc/designs/ecommerce/scss"/>
+            <exclude pattern="/etc/designs/ecommerce/templates"/>
     </filter>
 
     <filter root="/content/ecommerce"/>

@@ -3,7 +3,7 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:designPath="/etc/designs/ecommerce"
-        cq:lastModified="{Date}2014-03-20T19:06:01.110+11:00"
+        cq:lastModified="{Date}2014-03-31T14:46:42.907+11:00"
         cq:lastModifiedBy="admin"
         cq:template="/apps/ecommerce/templates/master"
         jcr:primaryType="cq:PageContent"
@@ -22,36 +22,83 @@
                 <container_contents
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="foundation/components/parsys">
+                    <navbarlinks
+                        jcr:created="{Date}2014-03-27T09:38:30.655+11:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2014-03-27T09:38:30.655+11:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/parsys"/>
+                    <navbar
+                        jcr:created="{Date}2014-03-26T20:18:07.214+11:00"
+                        jcr:createdBy="admin"
+                        jcr:lastModified="{Date}2014-03-27T20:13:17.811+11:00"
+                        jcr:lastModifiedBy="admin"
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="ecommerce/components/navbar"
+                        brand="Bootstrap One">
+                        <links
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="foundation/components/parsys">
+                            <google_us
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="ecommerce/components/navbarlink"
+                                active="false"
+                                href="/content/ecommerce/en"
+                                text="Google US"/>
+                            <google_us_0
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="ecommerce/components/navbarlink"
+                                active="false"
+                                href="/content/ecommerce/en"
+                                text="Google US"/>
+                        </links>
+                        <mynode
+                            jcr:primaryType="nt:unstructured"
+                            title="Stephen"/>
+                        <navlinks jcr:primaryType="nt:unstructured">
+                            <mynode
+                                jcr:primaryType="nt:unstructured"
+                                title="Stephen"/>
+                        </navlinks>
+                    </navbar>
                     <tabpanel
                         jcr:created="{Date}2014-03-20T11:38:00.267+11:00"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2014-03-20T11:38:00.267+11:00"
+                        jcr:lastModified="{Date}2014-03-31T14:46:42.901+11:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="ecommerce/components/tabpanel"/>
+                        sling:resourceType="ecommerce/components/tabpanel"
+                        text="Bacon ipsum dolor sit amet pork chop sirloin ball tip, fatback rump tail pig chicken landjaeger spare ribs flank pork belly leberkas venison. Landjaeger doner pork loin, biltong filet mignon shoulder frankfurter. Kielbasa ball tip pastrami, tail shankle bacon tongue leberkas meatloaf chuck jowl. Pastrami fatback hamburger landjaeger. Tri-tip cow frankfurter ribeye kielbasa kevin pork ground round pastrami meatloaf porchetta doner bresaola short ribs.&#xa;&#xa;Chicken swine shoulder ball tip. Brisket jowl meatloaf spare ribs, doner biltong turkey pork chop tri-tip shank sausage fatback salami ball tip cow. Turkey pancetta meatloaf pig corned beef. Landjaeger turkey ball tip, bacon pastrami hamburger boudin shoulder venison ham hock. Short loin pork belly meatball turducken cow sausage. Landjaeger shankle kevin, strip steak pork capicola tenderloin t-bone leberkas jerky chuck meatball corned beef bresaola tongue. Kielbasa leberkas landjaeger pork chop short loin, meatloaf doner pastrami cow bacon strip steak pork loin biltong ham hock.&#xa;&#xa;Salami kevin andouille corned beef meatloaf, chicken flank rump ribeye beef sausage frankfurter pork. Sirloin corned beef chicken, bresaola shankle jerky turducken t-bone beef fatback short loin biltong. Tenderloin beef pork loin, turducken tri-tip jerky drumstick filet mignon chuck meatball pork chop pork capicola. Landjaeger ribeye sirloin pork meatloaf porchetta bresaola pork loin spare ribs pastrami t-bone. Cow ham spare ribs pork loin, shank leberkas pig pork frankfurter ribeye meatloaf jerky strip steak. Pork belly chicken ribeye, swine pancetta cow sirloin. Brisket hamburger venison chicken pork leberkas pork belly, chuck jerky drumstick tongue short ribs jowl tenderloin kielbasa."/>
                     <panelwithheader
                         jcr:created="{Date}2014-03-20T11:39:16.836+11:00"
                         jcr:createdBy="admin"
                         jcr:lastModified="{Date}2014-03-20T11:39:16.836+11:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="ecommerce/components/panelwithheader"/>
+                        sling:resourceType="ecommerce/components/panelwithheader"
+                        header="Beer Ipsum"
+                        text="cold filter caramel malt autolysis barley terminal gravity. wort chiller wort chiller; dry stout pitching brewhouse, alpha acid anaerobic, hand pump."/>
                     <tabpanel_0
                         jcr:created="{Date}2014-03-20T11:39:22.059+11:00"
                         jcr:createdBy="admin"
                         jcr:lastModified="{Date}2014-03-20T11:39:22.059+11:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="ecommerce/components/tabpanel"/>
+                        sling:resourceType="ecommerce/components/tabpanel"
+                        text="Bacon ipsum dolor sit amet pork chop sirloin ball tip, fatback rump tail pig chicken landjaeger spare ribs flank pork belly leberkas venison. Landjaeger doner pork loin, biltong filet mignon shoulder frankfurter. Kielbasa ball tip pastrami, tail shankle bacon tongue leberkas meatloaf chuck jowl. Pastrami fatback hamburger landjaeger. Tri-tip cow frankfurter ribeye kielbasa kevin pork ground round pastrami meatloaf porchetta doner bresaola short ribs.&#xa;&#xa;Chicken swine shoulder ball tip. Brisket jowl meatloaf spare ribs, doner biltong turkey pork chop tri-tip shank sausage fatback salami ball tip cow. Turkey pancetta meatloaf pig corned beef. Landjaeger turkey ball tip, bacon pastrami hamburger boudin shoulder venison ham hock. Short loin pork belly meatball turducken cow sausage. Landjaeger shankle kevin, strip steak pork capicola tenderloin t-bone leberkas jerky chuck meatball corned beef bresaola tongue. Kielbasa leberkas landjaeger pork chop short loin, meatloaf doner pastrami cow bacon strip steak pork loin biltong ham hock.&#xa;&#xa;Salami kevin andouille corned beef meatloaf, chicken flank rump ribeye beef sausage frankfurter pork. Sirloin corned beef chicken, bresaola shankle jerky turducken t-bone beef fatback short loin biltong. Tenderloin beef pork loin, turducken tri-tip jerky drumstick filet mignon chuck meatball pork chop pork capicola. Landjaeger ribeye sirloin pork meatloaf porchetta bresaola pork loin spare ribs pastrami t-bone. Cow ham spare ribs pork loin, shank leberkas pig pork frankfurter ribeye meatloaf jerky strip steak. Pork belly chicken ribeye, swine pancetta cow sirloin. Brisket hamburger venison chicken pork leberkas pork belly, chuck jerky drumstick tongue short ribs jowl tenderloin kielbasa."/>
                     <panelwithheader_0
                         jcr:created="{Date}2014-03-20T11:39:40.697+11:00"
                         jcr:createdBy="admin"
-                        jcr:lastModified="{Date}2014-03-20T11:39:40.697+11:00"
+                        jcr:lastModified="{Date}2014-03-24T14:08:57.297+11:00"
                         jcr:lastModifiedBy="admin"
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="ecommerce/components/panelwithheader"/>
+                        sling:resourceType="ecommerce/components/panelwithheader"
+                        header="Beer Ipsum"
+                        text="cold filter caramel malt autolysis barley terminal gravity. wort chiller wort chiller; dry stout pitching brewhouse, alpha acid anaerobic, hand pump."/>
                 </container_contents>
             </mycontainer>
         </par>
     </jcr:content>
+    <products/>
 </jcr:root>
