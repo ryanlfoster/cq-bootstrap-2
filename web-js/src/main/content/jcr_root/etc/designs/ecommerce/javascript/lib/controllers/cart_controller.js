@@ -1,6 +1,5 @@
-(function(ec){
+(function (ec) {
     ec.controller('CartController', function ($scope, CartService) {
-
 
 
         $scope.cart = {
@@ -14,6 +13,16 @@
         $scope.totalItemCount = function () {
             return $scope.cart.products.length;
         };
+
+        $scope.productQuantity = function (sku) {
+            var qty = 0;
+            var ps = $scope.cart.products;
+            for (; i < ps.length; i++) {
+//               if(ps[i].sku === sku)
+
+            }
+            return qty;
+        }
 
         $scope.totalCost = function () {
             var r = 0.00

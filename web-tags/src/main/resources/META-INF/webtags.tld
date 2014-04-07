@@ -45,6 +45,11 @@
         <tag-class>ecommerce.web.tags.ProductsToJsonTag</tag-class>
         <body-content>empty</body-content>
     </tag>
+    <tag>
+        <name>productToJsonTag</name>
+        <tag-class>ecommerce.web.tags.ProductToJsonTag</tag-class>
+        <body-content>empty</body-content>
+    </tag>
 
 
 </taglib>

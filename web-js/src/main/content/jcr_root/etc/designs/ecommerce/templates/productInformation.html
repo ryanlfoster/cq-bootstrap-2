@@ -1,0 +1,23 @@
+<div ng-controller="CartController">
+    <div ng-controller="ProductInformationController">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                {{product.name}}  <span class="badge">{{product.quantity}}</span>
+            </div>
+            <div class="panel-body">
+                <div><p>{{product.code}}</p></div>
+                <div><p>{{product.sku}}</p></div>
+                <div><p>{{product.description}}</p></div>
+                <img src="" alt="" ng-src="{{product.image}}"/>
+
+                <div>
+
+                </div>
+            </div>
+            <div class="panel-footer">
+                <cart-button product="product" cart="cart"></cart-button>
+            </div>
+        </div>
+    </div>
+</div>

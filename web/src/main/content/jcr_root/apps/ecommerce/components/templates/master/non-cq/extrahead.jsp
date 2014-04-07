@@ -78,6 +78,7 @@
 
 <script src="/etc/designs/ecommerce/javascript/lib/controllers/cart_controller.js"></script>
 <script src="/etc/designs/ecommerce/javascript/lib/controllers/product_controller.js"></script>
+<script src="/etc/designs/ecommerce/javascript/lib/controllers/productinfo_controller.js"></script>
 
 
 <script src="/etc/designs/ecommerce/javascript/lib/directives/cart-button.js"></script>
@@ -85,6 +86,7 @@
 <script src="/etc/designs/ecommerce/javascript/lib/directives/product_information_button.js"></script>
 <script src="/etc/designs/ecommerce/javascript/lib/directives/headedpanel.js"></script>
 <script src="/etc/designs/ecommerce/javascript/lib/directives/panel.js"></script>
+<script src="/etc/designs/ecommerce/javascript/lib/directives/product-information.js"></script>
 
 <script src="/etc/designs/ecommerce/javascript/lib/services/cart_service.js"></script>
 
