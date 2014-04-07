@@ -2,6 +2,7 @@ package ecommerce.cart.web;
 
 import com.jayway.jsonassert.JsonAssert;
 import ecommerce.domain.web.CartJsonFormatter;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -11,6 +12,7 @@ import org.springframework.mock.web.MockHttpServletResponse;
 import static com.jayway.jsonassert.JsonAssert.collectionWithSize;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.Matchers.greaterThan;
 
 public class HttpJsonViewCartCommandTest {
@@ -29,15 +31,19 @@ public class HttpJsonViewCartCommandTest {
     @Before
     public void setUp() throws Exception {
 
-
         HttpJsonViewCartCommand command = new HttpJsonViewCartCommand(request, response);
         command.execute();
         json = response.getContentAsString();
     }
 
     @Test
+    public void responseShouldBeJson() throws Exception {
+        Assert.assertThat(response.getContentType(), is(equalTo("application/json")));
+    }
+
+    @Test
     public void givenARequestWeShouldSeeTheDefaultIdInTheJSONResponse() throws Exception {
-        JsonAssert.with(json).assertThat("$." + CartJsonFormatter.Fields.ID, greaterThan(0));
+        JsonAssert.with(json).assertThat("$." + CartJsonFormatter.Fields.ID, notNullValue());
     }
 
     @Test

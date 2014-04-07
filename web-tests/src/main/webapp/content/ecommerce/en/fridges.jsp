@@ -17,10 +17,10 @@
     })(ecommerce);
 </script>
 
-
-<div id="panel_1" ng-app="ecommerce">
-    <jsp:include page="/apps/ecommerce/components/product-tile/non-cq/product-tile.jsp"/>
-</div>
+<jsp:include page="/apps/ecommerce/components/templates/product/non-cq/base.jsp"/>
+<%--<div id="panel_1" ng-app="ecommerce">--%>
+    <%--<jsp:include page="/apps/ecommerce/components/product-tile/non-cq/product-tile.jsp"/>--%>
+<%--</div>--%>
 
 </body>
 </html>

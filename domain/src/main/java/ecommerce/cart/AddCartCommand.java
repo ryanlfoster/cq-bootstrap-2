@@ -2,7 +2,7 @@ package ecommerce.cart;
 
 import ecommerce.domain.Product;
 
-public abstract class AddCartComand implements CartCommand {
+public abstract class AddCartCommand implements CartCommand {
 
     abstract protected Product getProduct();
 

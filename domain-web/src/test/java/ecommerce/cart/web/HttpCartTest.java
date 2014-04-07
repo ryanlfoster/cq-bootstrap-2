@@ -17,8 +17,6 @@ public class HttpCartTest {
     @Test
     public void cartShouldBeCreatedIfNoSessionExists() throws Exception {
 
-//        MockServletContext servletContext = new MockServletContext();
-//        MockHttpSession mockHttpSession = new MockHttpSession(servletContext);
 
         MockHttpServletRequest request = new MockHttpServletRequest();
 

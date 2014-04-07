@@ -10,7 +10,6 @@ import java.io.IOException;
 
 public class ViewCartServlet extends HttpServlet {
 
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         new HttpJsonViewCartCommand(request, response).execute();
     }

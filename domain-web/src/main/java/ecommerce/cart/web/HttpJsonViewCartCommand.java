@@ -14,12 +14,14 @@ import java.io.Writer;
 
 public class HttpJsonViewCartCommand extends ViewCartCommand {
 
+    public static final String JSON_MIME_TYPE = "application/json";
+
     private HttpServletRequest request;
     private HttpServletResponse response;
 
     public HttpJsonViewCartCommand(HttpServletRequest request, HttpServletResponse response) {
         this.request = request;
-        response.setContentType("application/json");
+        response.setContentType(JSON_MIME_TYPE);
         this.response = response;
     }
 

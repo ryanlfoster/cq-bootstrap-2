@@ -20,28 +20,35 @@ public class ProductsToJsonTag extends SimpleTagSupport {
 
         generator.writeStartArray();
 
-        for(int i = 0 ; i < 21 ; i++)
+        for(int i = 0 ; i < 21 ; i++) {
+            final int sku = i;
             ProductJsonGenerator.writeJson(generator, new Product(){
-                @Override
-                public String getName() {
-                    return "Product Information #" ;
-                }
+                            @Override
+                            public String getName() {
+                                return "Product Information #" ;
+                            }
 
-                @Override
-                public String getDescription() {
-                    return getLoremIpsum();
-                }
+                            @Override
+                            public String getDescription() {
+                                return getLoremIpsum();
+                            }
 
-                @Override
-                public String getImageSource() {
-                    return "//placekitten.com/340/300";
-                }
+                            @Override
+                            public String getImageSource() {
+                                return "//placekitten.com/340/300";
+                            }
 
-                @Override
-                public int getQuantity() {
-                    return 0;
-                }
-            });
+                            @Override
+                            public int getQuantity() {
+                                return 0;
+                            }
+
+                            @Override
+                            public String getCode() {
+                                return String.valueOf(sku);
+                            }
+                        });
+        }
 
         generator.writeEndArray();
 
@@ -63,6 +70,7 @@ interface Product {
     String getDescription();
     String getImageSource();
     int getQuantity();
+    String getCode();
 }
 
 class ProductJsonGenerator {
@@ -70,6 +78,8 @@ class ProductJsonGenerator {
     public static void writeJson(JsonGenerator generator , Product product){
         try {
             generator.writeStartObject();
+            generator.writeStringField("code" , product.getCode());
+            generator.writeStringField("sku" , product.getCode());
             generator.writeStringField("name" , product.getName());
             generator.writeStringField("description" , product.getDescription());
             generator.writeStringField("image" , product.getImageSource());

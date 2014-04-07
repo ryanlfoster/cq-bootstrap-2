@@ -10,7 +10,6 @@ public abstract class ViewCartCommand implements CartCommand {
 
     private static final Logger log = LoggerFactory.getLogger(ViewCartCommand.class);
 
-
     protected abstract Writer getWriter();
 
     protected abstract CartFormatter getFormatter();

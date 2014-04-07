@@ -7,6 +7,7 @@
         <dir name="/Users/ssmithstone/Development/smithstone-oss/bootstrap_ecommerce_cq/ecommerce/web-tests/target/classes">
         </dir>
         <dir name="/Users/ssmithstone/Development/smithstone-oss/bootstrap_ecommerce_cq/ecommerce/domain/target/classes"/>
+        <dir name="/Users/ssmithstone/Development/smithstone-oss/bootstrap_ecommerce_cq/ecommerce/domain-web/target/classes"/>
         <dir name="/Users/ssmithstone/Development/smithstone-oss/bootstrap_ecommerce_cq/ecommerce/web/target/classes"/>
         <dir name="/Users/ssmithstone/Development/smithstone-oss/bootstrap_ecommerce_cq/ecommerce/web-tags/target/classes"/>
     </classpath>

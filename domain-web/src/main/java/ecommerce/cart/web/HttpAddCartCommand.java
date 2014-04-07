@@ -1,6 +1,6 @@
 package ecommerce.cart.web;
 
-import ecommerce.cart.AddCartComand;
+import ecommerce.cart.AddCartCommand;
 import ecommerce.cart.Cart;
 import ecommerce.domain.Product;
 import ecommerce.domain.web.ProductMapper;
@@ -8,7 +8,7 @@ import ecommerce.domain.web.ProductMapper;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-public class HttpAddCartCommand extends AddCartComand {
+public class HttpAddCartCommand extends AddCartCommand {
 
     private HttpServletRequest request;
 
