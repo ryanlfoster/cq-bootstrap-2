@@ -1,0 +1,42 @@
+<div class="panel panel-default">
+
+    <div class="panel-heading">
+        Billing Information
+    </div>
+
+    <div class="panel-body">
+
+
+        <fieldset>
+
+            <div class="input-group">
+                <label for="billing_firstName">First Name</label>
+                <input required ng-model="customer.billing.firstName" type="text" id="billing_firstName" name="billing_firstName" class="form-control"
+                       placeholder="First Name">
+            </div>
+            <div class="input-group">
+                <label for="billing_lastName">Last Name</label>
+                <input required ng-model="customer.billing.lastName" type="text" name="billing_lastName" id="billing_lastName" class="form-control"
+                       placeholder="Surname Name">
+            </div>
+            <div class="input-group">
+                <label for="billing_address1">Address 1</label>
+                <input required ng-model="customer.billing.address1" type="text" name="billing_address1" id="billing_address1" class="form-control"
+                       placeholder="Address 1">
+            </div>
+            <div class="input-group">
+                <label for="billing_address2">Address 2</label>
+                <input ng-model="customer.billing.address2" type="text" name="billing_address2" id="billing_address2" class="form-control"
+                       placeholder="Address 2">
+            </div>
+            <div class="input-group">
+                <label for="billing_postcode">Post Code</label>
+                <input required ng-model="customer.billing.postcode" type="text" name="billing_postcode" id="billing_postcode" class="form-control"
+                       placeholder="Address 2">
+            </div>
+
+        </fieldset>
+
+
+    </div>
+</div>

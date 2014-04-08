@@ -1,0 +1,31 @@
+<div class="panel panel-default">
+    <div class="panel-heading">Payment</div>
+    <div class="panel-body">
+
+        <div class="input-group">
+            <label for="payment_cardName">Name On Card</label>
+            <input required ng-model="customer.payment.cardName" type="text" id="payment_cardName" name="payment_cardName" class="form-control"
+                   placeholder="Name On Card"/>
+        </div>
+
+        <div class="input-group">
+            <label for="payment_cvv">CVV</label>
+            <input required ng-model="customer.payment.cvv" type="password" id="payment_cvv" name="payment_cvv" class="form-control"
+                   placeholder="CVV"/>
+        </div>
+
+        <div class="input-group">
+            <label for="payment_cardNumber">Card No</label>
+            <input required ng-model="customer.payment.cardNumber" type="text" id="payment_cardNumber" name="payment_cardNumber" class="form-control"
+                   placeholder="Card No"/>
+        </div>
+
+        <div class="input-group">
+            <label for="payment_expiryDate">Expiry Date</label>
+            <input required ng-model="customer.payment.expiryDate" type="date" id="payment_expiryDate" name="payment_expiryDate" class="form-control"
+                   placeholder="Card No"/>
+        </div>
+
+
+    </div>
+</div>

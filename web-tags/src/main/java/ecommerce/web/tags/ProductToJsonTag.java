@@ -18,6 +18,6 @@ public class ProductToJsonTag extends SimpleTagSupport {
         generator.flush();
         getJspContext().setAttribute("productData" , sw.toString());
     }
-
-
 }
+
+
