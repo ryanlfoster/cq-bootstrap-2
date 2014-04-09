@@ -1,12 +1,9 @@
 package ecommerce.components;
 
-import ecommerce.domain.HeadedPanel;
-import ecommerce.fake.FakeHeadedPanelSupportTag;
 import org.jsoup.nodes.Document;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
 
 public class HeadedPanelTest extends AbstractViewTest {

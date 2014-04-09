@@ -1,4 +1,4 @@
-package ecommerce.http.servlets;
+package ecommerce.http.cq.servlets;
 
 import ecommerce.cart.web.HttpCheckoutCartCommand;
 import ecommerce.cart.web.output.JsonCheckoutResponseWriter;
@@ -26,10 +26,10 @@ public class JSONCheckoutCartSlingServlet extends SlingAllMethodsServlet {
 
     @Override
     protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
-        JsonCheckoutResponseWriter success = new JsonCheckoutResponseWriter(response.getWriter());
-        JsonCheckoutResponseWriter failure = new JsonCheckoutResponseWriter(response.getWriter());
         response.setContentType("application/json");
-        new HttpCheckoutCartCommand(request, success, failure).execute();
+        new HttpCheckoutCartCommand(request,
+                new JsonCheckoutResponseWriter(response.getWriter()),
+                new JsonCheckoutResponseWriter(response.getWriter())).execute();
     }
 }
 

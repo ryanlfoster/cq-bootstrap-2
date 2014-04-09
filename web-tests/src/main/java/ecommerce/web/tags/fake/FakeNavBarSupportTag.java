@@ -1,4 +1,4 @@
-package ecommerce.fake;
+package ecommerce.web.tags.fake;
 
 import ecommerce.domain.NavBarBodyModelUI;
 import ecommerce.domain.NavBarHeaderUI;

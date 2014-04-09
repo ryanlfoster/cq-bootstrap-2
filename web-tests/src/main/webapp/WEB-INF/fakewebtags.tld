@@ -10,23 +10,23 @@
 
     <tag>
         <name>panelSupportTag</name>
-        <tag-class>ecommerce.fake.FakePanelSupportTag</tag-class>
+        <tag-class>ecommerce.web.tags.fake.FakePanelSupportTag</tag-class>
         <body-content>empty</body-content>
     </tag>
 
     <tag>
         <name>headedPanelSupportTag</name>
-        <tag-class>ecommerce.fake.FakeHeadedPanelSupportTag</tag-class>
+        <tag-class>ecommerce.web.tags.fake.FakeHeadedPanelSupportTag</tag-class>
         <body-content>empty</body-content>
     </tag>
     <tag>
         <name>impsumHeadedPanelSupportTag</name>
-        <tag-class>ecommerce.fake.FakeLoremImpsumHeadedPanelSupportTag</tag-class>
+        <tag-class>ecommerce.web.tags.fake.FakeLoremImpsumHeadedPanelSupportTag</tag-class>
         <body-content>empty</body-content>
     </tag>
     <tag>
         <name>navBarSupportTag</name>
-        <tag-class>ecommerce.fake.FakeNavBarSupportTag</tag-class>
+        <tag-class>ecommerce.web.tags.fake.FakeNavBarSupportTag</tag-class>
         <body-content>empty</body-content>
     </tag>
 

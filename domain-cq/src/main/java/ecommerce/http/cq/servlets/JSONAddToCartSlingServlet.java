@@ -1,4 +1,4 @@
-package ecommerce.http.servlets;
+package ecommerce.http.cq.servlets;
 
 import ecommerce.cart.web.JSONAddCartCommand;
 import org.apache.felix.scr.annotations.Component;

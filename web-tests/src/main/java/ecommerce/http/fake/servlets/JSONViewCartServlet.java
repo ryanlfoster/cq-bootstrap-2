@@ -1,4 +1,4 @@
-package ecommerce.web.servlets;
+package ecommerce.http.fake.servlets;
 
 import ecommerce.cart.web.HttpViewCartCommand;
 import ecommerce.cart.web.output.JsonCartWriter;
@@ -14,7 +14,6 @@ public class JSONViewCartServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         new HttpViewCartCommand(request, new JsonCartWriter(response.getWriter())).execute();
     }
-
 }
 
 

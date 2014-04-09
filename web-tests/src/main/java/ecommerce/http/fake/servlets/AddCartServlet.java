@@ -1,4 +1,4 @@
-package ecommerce.web.servlets;
+package ecommerce.http.fake.servlets;
 
 import ecommerce.cart.web.JSONAddCartCommand;
 

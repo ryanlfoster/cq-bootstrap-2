@@ -1,6 +1,6 @@
 package ecommerce.components;
 
-import ecommerce.fake.FakeNavBarHeaderModel;
+import ecommerce.web.tags.fake.FakeNavBarHeaderModel;
 import org.jsoup.nodes.Element;
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package ecommerce.http.servlets;
+package ecommerce.http.cq.servlets;
 
 import org.apache.sling.commons.testing.sling.MockSlingHttpServletRequest;
 import org.apache.sling.commons.testing.sling.MockSlingHttpServletResponse;
@@ -15,30 +15,36 @@ import static org.hamcrest.Matchers.not;
 import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.assertThat;
 
-public class JSONViewCartSlingServletTest {
-
+public class JSONCheckoutCartSlingServletTest {
 
     @Test
-    public void onGetShouldReturnJsonViewOfMyCart() throws Exception {
-        JSONViewCartSlingServlet servlet = new JSONViewCartSlingServlet();
-        MockSlingHttpServletRequest request =
-                new MockSlingHttpServletRequest("/content/commerce/en",
-                        "cart.view", "do", "", "") {
+    public void successCheckoutShouldReturnSuccessfulJsonResponse() throws Exception {
 
-                    @Override
-                    public HttpSession getSession() {
-                        return new MockHttpSession();
-                    }
 
-                    @Override
-                    public HttpSession getSession(boolean create) {
-                        return new MockHttpSession();
-                    }
-                };
+        JSONCheckoutCartSlingServlet servlet = new JSONCheckoutCartSlingServlet();
+
+        final MockHttpSession mockHttpSession = new MockHttpSession();
+
+
+        MockSlingHttpServletRequest request = new MockSlingHttpServletRequest("/content/commerce/en", "cart.checkout", "do", "", ""){
+
+            @Override
+            public HttpSession getSession() {
+                return mockHttpSession;
+            }
+
+            @Override
+            public HttpSession getSession(boolean create) {
+                return mockHttpSession;
+            }
+
+
+        };
+
         final MockHttpServletResponse response = new MockHttpServletResponse();
 
 
-        servlet.doGet(request, new MockSlingHttpServletResponse() {
+        servlet.doPost(request, new MockSlingHttpServletResponse(){
             @Override
             public PrintWriter getWriter() throws IOException {
                 return response.getWriter();
@@ -50,10 +56,8 @@ public class JSONViewCartSlingServletTest {
             }
         });
 
+
         assertThat(response.getContentType(), equalTo("application/json"));
         assertThat(response.getContentAsString(), not(nullValue()));
-
     }
 }
-
-

@@ -1,7 +1,7 @@
 package ecommerce.components;
 
 import ecommerce.domain.Panel;
-import ecommerce.fake.FakeHeadedPanelSupportTag;
+import ecommerce.web.tags.fake.FakeHeadedPanelSupportTag;
 import org.jsoup.nodes.Document;
 import org.junit.Ignore;
 import org.junit.Test;
