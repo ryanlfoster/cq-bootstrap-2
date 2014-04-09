@@ -1,6 +1,6 @@
 package ecommerce.http.servlets;
 
-import ecommerce.cart.web.HttpAddCartCommand;
+import ecommerce.cart.web.JSONAddCartCommand;
 import org.apache.felix.scr.annotations.Component;
 import org.apache.felix.scr.annotations.Properties;
 import org.apache.felix.scr.annotations.Property;
@@ -22,9 +22,9 @@ import java.io.IOException;
         @Property(name = "sling.servlet.methods", value = "POST")
 })
 
-public class SlingAddToCartServlet extends SlingAllMethodsServlet {
+public class JSONAddToCartSlingServlet extends SlingAllMethodsServlet {
     @Override
     protected void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
-        new HttpAddCartCommand(request).execute();
+        new JSONAddCartCommand(request).execute();
     }
 }

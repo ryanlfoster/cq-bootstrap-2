@@ -8,9 +8,9 @@ import ecommerce.domain.web.ProductMapper;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-public class HttpAddCartCommand extends AddCartCommand {
+public abstract class HttpAddCartCommand extends AddCartCommand {
 
-    private HttpServletRequest request;
+    protected HttpServletRequest request;
 
     public HttpAddCartCommand(HttpServletRequest request) {
         this.request = request;
@@ -21,13 +21,7 @@ public class HttpAddCartCommand extends AddCartCommand {
         return new HttpCart(request);
     }
 
-    @Override
-    public Product getProduct() {
-        try {
-            return (new ProductMapper().parse(request.getReader()));
-        } catch (IOException e) {
-            return new Product();
-        }
-    }
+    public abstract Product getProduct();
 
 }
+

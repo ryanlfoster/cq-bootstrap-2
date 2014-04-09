@@ -12,10 +12,10 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.assertThat;
 
-public class HttpAddCartCommandTest {
+public class JSONAddCartCommandTest {
 
     @Test
-    public void xxx() throws Exception {
+    public void jsonContentCanBeParsedAndAddedToCart() throws Exception {
 
         MockHttpSession session = new MockHttpSession();
         MockHttpServletRequest request = new MockHttpServletRequest();
@@ -26,7 +26,7 @@ public class HttpAddCartCommandTest {
 
         request.setContent(s.getBytes());
 
-        new HttpAddCartCommand(request).execute();
+        new JSONAddCartCommand(request).execute();
 
         Map<String, PurchaseProduct> cart = (Map<String, PurchaseProduct>) session.getAttribute("cart");
 

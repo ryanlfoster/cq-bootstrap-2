@@ -27,7 +27,7 @@
 
     <servlet>
         <servlet-name>ViewCartServlet</servlet-name>
-        <servlet-class>ecommerce.web.servlets.ViewCartServlet</servlet-class>
+        <servlet-class>ecommerce.web.servlets.JSONViewCartServlet</servlet-class>
 
     </servlet>
 
@@ -38,7 +38,7 @@
 
     <servlet>
         <servlet-name>CheckoutCartServlet</servlet-name>
-        <servlet-class>ecommerce.web.servlets.CheckoutCartServlet</servlet-class>
+        <servlet-class>ecommerce.web.servlets.JSONCheckoutCartServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>

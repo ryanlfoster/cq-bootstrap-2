@@ -1,5 +1,7 @@
 package ecommerce.web.tags;
 
+import ecommerce.domain.Product;
+import ecommerce.domain.web.ProductJsonGenerator;
 import org.codehaus.jackson.JsonFactory;
 import org.codehaus.jackson.JsonGenerator;
 
@@ -7,24 +9,34 @@ import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 import java.io.IOException;
 import java.io.StringWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProductsToJsonTag extends SimpleTagSupport {
 
 
     @Override
     public void doTag() throws JspException, IOException {
-        StringWriter sw = new StringWriter();
-        JsonGenerator generator = new JsonFactory().createJsonGenerator(sw);
-        generator.writeStartArray();
+        List<Product> products = new ArrayList<Product>();
         for(int i = 0 ; i < 21 ; i++) {
-            final int sku = i;
-            new StaticProductGenerator().generateProduct(generator, sku);
+            products.add(getProduct(i));
         }
-        generator.writeEndArray();
-        generator.flush();
-        getJspContext().setAttribute("productsData" , sw.toString());
+        getJspContext().setAttribute("productsData", ProductJsonGenerator.writeJson(products.toArray(new Product[products.size()])));
     }
 
+    protected Product getProduct(int sku) {
+
+        return new Product("Product Information #",
+                 getLoremIpsum(),
+                 "//placekitten.com/340/300",
+                 String.valueOf(sku), 10.00);
+    }
+
+
+
+    private String getLoremIpsum() {
+        return "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque modi, vel? Amet assumenda consequatur cum dolore, explicabo, inventore iste iusto magni minima mollitia omnis pariatur quae sequi soluta unde voluptas!";
+    }
 }
 
 

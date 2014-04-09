@@ -10,24 +10,24 @@ public class Product {
     private String code;
     private int quantity;
 
+    public Product() {
+    }
+
+    public Product(String name, String description, String image, String code, double cost) {
+        this.name = name;
+        this.description = description;
+        this.image = image;
+        this.code = code;
+        this.cost = cost;
+        this.quantity = 0;
+    }
+
     public int getQuantity() {
         return quantity;
     }
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
-    }
-
-    public Product() {
-    }
-
-
-    public Product(String name, String description, String image, String sku, double cost) {
-        this.name = name;
-        this.description = description;
-        this.image = image;
-        this.sku = sku;
-        this.cost = cost;
     }
 
     public String getSku() {
@@ -75,11 +75,11 @@ public class Product {
                 '}';
     }
 
-    public void setCost(double cost) {
-        this.cost = cost;
-    }
-
     public double getCost() {
         return cost;
+    }
+
+    public void setCost(double cost) {
+        this.cost = cost;
     }
 }

@@ -1,7 +1,7 @@
-package ecommerce.domain.web;
+package ecommerce.cart.web.output;
 
 import ecommerce.cart.Cart;
-import ecommerce.cart.CartFormatter;
+import ecommerce.cart.CartWriter;
 import ecommerce.domain.PurchaseProduct;
 import org.codehaus.jackson.JsonFactory;
 import org.codehaus.jackson.JsonGenerator;
@@ -9,63 +9,40 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.io.StringWriter;
 import java.io.Writer;
 import java.util.Map;
 
-import static ecommerce.cart.CartFormatter.Fields;
-
-public class CartJsonFormatter implements CartFormatter {
+public class JsonCartWriter implements CartWriter {
 
     private Writer writer;
 
-    private JsonWriter jsonWriter;
+    interface Fields {
 
-    public CartJsonFormatter() {
-        writer = new StringWriter();
-        jsonWriter = new JacksonJsonWriter(writer);
+        static String ID = "id";
+        static String EMAIL = "email";
+        static String PRODUCTS = "products";
 
+        interface ProductFields {
+            static String CODE = "code";
+            static String QUANTITY = "quantity";
+            static String TOTAL_ITEM_COST = "totalItemCost";
+        }
     }
 
-    public CartJsonFormatter(java.io.Writer writer) {
-        this.writer = writer;
-        jsonWriter = new JacksonJsonWriter(this.writer);
-    }
-
-    public String format(Cart cart, String id) {
-        jsonWriter.addCustomerInformation(id);
-        jsonWriter.addProducts(cart);
-        return jsonWriter.generate();
-    }
-
-
-}
-
-
-interface JsonWriter {
-
-    void addCustomerInformation(String id);
-
-    void addProducts(Cart cart);
-
-    String generate();
-}
-
-class JacksonJsonWriter implements JsonWriter {
-
-    private static final Logger log = LoggerFactory.getLogger(JacksonJsonWriter.class);
-
-    private final Writer writer;
+    private static final Logger log = LoggerFactory.getLogger(JsonCartWriter.class);
 
     private JsonGenerator generator;
 
-    JacksonJsonWriter(Writer writer) {
+    public JsonCartWriter(Writer writer) {
         this.writer = writer;
+
         try {
+
+
             generator = new JsonFactory().createJsonGenerator(this.writer);
             generator.writeStartObject();
         } catch (IOException e) {
-            log.error("{}", e.getMessage());
+            log.error(e.getMessage());
         }
 
     }
@@ -77,7 +54,7 @@ class JacksonJsonWriter implements JsonWriter {
             generator.writeStringField(Fields.ID, id);
             generator.writeStringField(Fields.EMAIL, Cart.DEFAULT_CUSTOMER_EMAIL);
         } catch (IOException e) {
-            log.error("{}", e.getMessage());
+            log.error(e.getMessage());
         }
 
     }
@@ -89,7 +66,7 @@ class JacksonJsonWriter implements JsonWriter {
             writeCartProducts(cart);
             generator.writeEndArray();
         } catch (IOException e) {
-            log.error("{}", e.getMessage());
+            log.error(e.getMessage());
         }
 
     }
@@ -102,25 +79,22 @@ class JacksonJsonWriter implements JsonWriter {
                 generator.writeStartObject();
                 generator.writeStringField(Fields.ProductFields.CODE, "SKU" + next.getKey());
                 generator.writeNumberField(Fields.ProductFields.QUANTITY, n.getTotalCount());
-                generator.writeNumberField(Fields.ProductFields.TOTALITEMCOST, n.getTotalCost());
+                generator.writeNumberField(Fields.ProductFields.TOTAL_ITEM_COST, n.getTotalCost());
                 generator.writeEndObject();
             }
         }
     }
 
+
     @Override
-    public String generate() {
-        String json = "{}";
+    public void complete() {
         try {
             generator.writeEndObject();
             generator.flush();
-            json = writer.toString();
-        } catch (IOException e) {
-            log.error("{}", e.getMessage());
+            generator.close();
 
+        } catch (IOException e) {
+            log.error(e.getMessage());
         }
-        return json;
     }
 }
-
-

@@ -16,12 +16,9 @@
 
 <div class="container" ng-app="ecommerce">
     <ecommerce-cart:checkout>
-
-
         <jsp:include page="/apps/ecommerce/components/cart/checkout/billing/non-cq/base.jsp"/>
         <jsp:include page="/apps/ecommerce/components/cart/checkout/shipping/non-cq/base.jsp"/>
         <jsp:include page="/apps/ecommerce/components/cart/checkout/payment/non-cq/base.jsp"/>
-
     </ecommerce-cart:checkout>
 </div>
 

@@ -5,8 +5,6 @@
 
 <div ng-app="ecommerce" class="container">
 
-
-
     <ecomm-checkout:checkout>
 
         <cq:include path="par" resourceType="foundation/components/parsys"/>
