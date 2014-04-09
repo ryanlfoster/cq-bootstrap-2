@@ -250,7 +250,9 @@
                         </Export-Package>
                         <Import-Package>
                             ecommerce.domain.*,
+                            ecommerce.cart,
                             ecommerce.cart.web,
+                            ecommerce.cart.web.output,
                             org.apache.sling.api.servlets,
                             org.apache.sling.api.resource,
                             org.apache.sling.api.wrappers,

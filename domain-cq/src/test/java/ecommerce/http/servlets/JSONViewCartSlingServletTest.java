@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.not;
+import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.assertThat;
 
 public class JSONViewCartSlingServletTest {
@@ -48,10 +50,8 @@ public class JSONViewCartSlingServletTest {
             }
         });
 
-
-        System.out.println(response.getContentAsString());
-
         assertThat(response.getContentType(), equalTo("application/json"));
+        assertThat(response.getContentAsString(), not(nullValue()));
 
     }
 }
