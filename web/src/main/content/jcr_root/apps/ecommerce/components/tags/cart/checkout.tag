@@ -9,7 +9,7 @@
         </div>
     </div>
 
-    <div class="panel panel-default">
+    <div class="panel panel-default" ng-hide="!awaitingCheckout">
         <div class="panel-heading">Checkout</div>
         <div class="panel-body">
 

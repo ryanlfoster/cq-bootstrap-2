@@ -8,11 +8,11 @@
         $scope.awaitingCheckout = true;
 
         $scope.checkout = function(customer){
-            $http.post('/en.cart.checkout.do' , customer).success(function(data,status){
-                $scope.awaitingCheckout = false;
-                $scope.checkoutMessage = data.success;
-
-            });
+//            $http.post('/en.cart.checkout.do' , customer).success(function(data,status){
+//                $scope.awaitingCheckout = false;
+//                $scope.checkoutMessage = data.success;
+//
+//            });
         }
 
         $scope.reset = function(){

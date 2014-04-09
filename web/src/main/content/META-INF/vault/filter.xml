@@ -4,12 +4,15 @@
     <filter root="/apps/ecommerce/components/tabpanel/non-cq/"/>
     <filter root="/apps/ecommerce/components/panelwithheader/non-cq/"/>
     <filter root="/apps/ecommerce/components/navbar/non-cq/"/>
+    <filter root="/apps/ecommerce/components/cart/checkout/billing/non-cq/"/>
+    <filter root="/apps/ecommerce/components/cart/checkout/shipping/non-cq/"/>
+    <filter root="/apps/ecommerce/components/cart/checkout/payment/non-cq/"/>
 
     <filter root="/apps/ecommerce/components/templates/master/non-cq/"/>
     <filter root="/apps/ecommerce/components/templates/product/non-cq/"/>
+    <filter root="/apps/ecommerce/components/templates/checkout/non-cq/"/>
 
 
     <filter root="/apps/ecommerce/components/tags"/>
-    <!--<filter root="/apps/ecommerce/components/tags/nav"/>-->
     <filter root="/etc/designs/ecommerce/style"/>
 </workspaceFilter>

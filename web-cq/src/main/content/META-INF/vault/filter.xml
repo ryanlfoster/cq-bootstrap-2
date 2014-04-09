@@ -9,9 +9,13 @@
         <exclude pattern="/apps/ecommerce/components/navbarlink/non-cq"/>
         <exclude pattern="/apps/ecommerce/components/tags"/>
         <exclude pattern="/apps/ecommerce/components/tags/nav"/>
+        <exclude pattern="/apps/ecommerce/components/cart/checkout/billing/non-cq"/>
+        <exclude pattern="/apps/ecommerce/components/cart/checkout/shipping/non-cq"/>
+        <exclude pattern="/apps/ecommerce/components/cart/checkout/payment/non-cq"/>
 
         <exclude pattern="/apps/ecommerce/components/templates/master/non-cq"/>
         <exclude pattern="/apps/ecommerce/components/templates/product/non-cq"/>
+        <exclude pattern="/apps/ecommerce/components/templates/checkout/non-cq"/>
     </filter>
     <filter root="/apps/foundation/components/page"/>
     <filter root="/apps/ecommerce/templates"/>

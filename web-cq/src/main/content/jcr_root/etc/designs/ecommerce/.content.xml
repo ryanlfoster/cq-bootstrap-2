@@ -29,6 +29,14 @@
                 <section jcr:primaryType="nt:unstructured"/>
             </par>
         </product>
+        <checkout jcr:primaryType="nt:unstructured">
+            <par
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="foundation/components/parsys"
+                components="[group:Ecommerce Bootstrap, group:General]">
+                <section jcr:primaryType="nt:unstructured"/>
+            </par>
+        </checkout>
     </jcr:content>
     <style/>
     <less/>

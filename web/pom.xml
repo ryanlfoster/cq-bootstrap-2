@@ -67,7 +67,6 @@
             </resource>
             <resource>
                 <directory>src/main/java/WEB-INF/tags</directory>
-                <!--<targetPath>apps/ecommerce/components/tags</targetPath>-->
             </resource>
         </resources>
 
