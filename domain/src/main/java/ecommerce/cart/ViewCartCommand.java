@@ -18,8 +18,6 @@ public abstract class ViewCartCommand implements CartCommand {
 
     @Override
     public void execute() {
-        cartWriter.addCustomerInformation(getId());
-        cartWriter.addProducts(getCart());
-        cartWriter.complete();
+        cartWriter.write(getId(), getCart());
     }
 }

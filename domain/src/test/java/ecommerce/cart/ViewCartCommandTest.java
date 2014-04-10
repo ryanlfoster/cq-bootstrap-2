@@ -31,9 +31,7 @@ public class ViewCartCommandTest {
             }
         }.execute();
 
-        Mockito.verify(writer).addCustomerInformation("1");
-        Mockito.verify(writer).addProducts(cart);
-        Mockito.verify(writer).complete();
+        Mockito.verify(writer).write("1" , cart);
     }
 
 }

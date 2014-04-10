@@ -14,8 +14,6 @@ import java.util.Map;
 
 public class JsonCartWriter implements CartWriter {
 
-    private Writer writer;
-
     interface Fields {
 
         static String ID = "id";
@@ -34,12 +32,8 @@ public class JsonCartWriter implements CartWriter {
     private JsonGenerator generator;
 
     public JsonCartWriter(Writer writer) {
-        this.writer = writer;
-
         try {
-
-
-            generator = new JsonFactory().createJsonGenerator(this.writer);
+            generator = new JsonFactory().createJsonGenerator(writer);
             generator.writeStartObject();
         } catch (IOException e) {
             log.error(e.getMessage());
@@ -47,9 +41,15 @@ public class JsonCartWriter implements CartWriter {
 
     }
 
-
     @Override
-    public void addCustomerInformation(String id) {
+    public void write(String id , Cart cart) {
+        addCustomerInformation(id);
+        addProducts(cart);
+        complete();
+    }
+
+
+    private void addCustomerInformation(String id) {
         try {
             generator.writeStringField(Fields.ID, id);
             generator.writeStringField(Fields.EMAIL, Cart.DEFAULT_CUSTOMER_EMAIL);
@@ -59,8 +59,7 @@ public class JsonCartWriter implements CartWriter {
 
     }
 
-    @Override
-    public void addProducts(Cart cart) {
+    private void addProducts(Cart cart) {
         try {
             generator.writeArrayFieldStart(Fields.PRODUCTS);
             writeCartProducts(cart);
@@ -86,8 +85,7 @@ public class JsonCartWriter implements CartWriter {
     }
 
 
-    @Override
-    public void complete() {
+    private void complete() {
         try {
             generator.writeEndObject();
             generator.flush();
