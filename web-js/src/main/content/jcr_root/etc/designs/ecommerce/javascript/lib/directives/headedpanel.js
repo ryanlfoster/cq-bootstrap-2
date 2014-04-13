@@ -13,10 +13,7 @@
             },
             restrict: 'E',
             templateUrl: '/etc/designs/ecommerce/templates/headedpanel.html',
-            replace : true,
-            controller : function ( $scope ){
-
-            }
+            replace : true
 
         };
     });

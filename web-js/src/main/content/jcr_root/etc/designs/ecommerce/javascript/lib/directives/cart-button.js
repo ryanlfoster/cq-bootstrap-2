@@ -1,4 +1,6 @@
-(function (ec){
+/*global ecommerce: true */
+
+(function (ec) {
     'use strict';
     ec.directive('cartButton', function () {
         return {
@@ -27,4 +29,4 @@
         };
     });
 
-})(ecommerce);
+}(ecommerce));

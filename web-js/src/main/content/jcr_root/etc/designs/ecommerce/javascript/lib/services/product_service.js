@@ -1,8 +1,10 @@
-ecommerce.factory('Products', function () {
+/*global ecommerce: true */
 
+ecommerce.factory('Products', function () {
+    'use strict';
     return {
 
-        getData: function(){
+        getData: function () {
             return [];
         }
 

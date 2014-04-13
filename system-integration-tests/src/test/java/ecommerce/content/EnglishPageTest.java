@@ -6,11 +6,13 @@ import ecommerce.domain.HeadedPanelModel;
 import ecommerce.domain.PanelModel;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
 
+@Ignore("all these integration tests which are not run yet")
 public class EnglishPageTest {
 
     @Test
