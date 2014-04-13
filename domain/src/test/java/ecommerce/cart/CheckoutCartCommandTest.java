@@ -19,9 +19,7 @@ public class CheckoutCartCommandTest {
             }
         }.execute();
 
-        Mockito.verify(s, times(1)).writeSuccess();
-        Mockito.verify(s, times(1)).writeOrderId();
-        Mockito.verify(s, times(1)).complete();
+        Mockito.verify(s, times(1)).success();
     }
 
     @Test
@@ -35,9 +33,6 @@ public class CheckoutCartCommandTest {
                 return Mockito.mock(Cart.class);
             }
         }.execute();
-        Mockito.verify(f, times(0)).writeFailure();
-        Mockito.verify(f, times(0)).complete();
-
-
+        Mockito.verify(f, times(0)).failed();
     }
 }

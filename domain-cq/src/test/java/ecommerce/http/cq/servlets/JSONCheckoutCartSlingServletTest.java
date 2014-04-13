@@ -1,5 +1,6 @@
 package ecommerce.http.cq.servlets;
 
+import com.jayway.jsonassert.JsonAssert;
 import org.apache.sling.commons.testing.sling.MockSlingHttpServletRequest;
 import org.apache.sling.commons.testing.sling.MockSlingHttpServletResponse;
 import org.junit.Test;
@@ -10,16 +11,13 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.not;
-import static org.hamcrest.Matchers.nullValue;
+import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 
 public class JSONCheckoutCartSlingServletTest {
 
     @Test
     public void successCheckoutShouldReturnSuccessfulJsonResponse() throws Exception {
-
 
         JSONCheckoutCartSlingServlet servlet = new JSONCheckoutCartSlingServlet();
 
@@ -38,12 +36,9 @@ public class JSONCheckoutCartSlingServletTest {
                 return mockHttpSession;
             }
 
-
         };
 
         final MockHttpServletResponse response = new MockHttpServletResponse();
-
-
         servlet.doPost(request, new MockSlingHttpServletResponse(){
             @Override
             public PrintWriter getWriter() throws IOException {
@@ -58,6 +53,11 @@ public class JSONCheckoutCartSlingServletTest {
 
 
         assertThat(response.getContentType(), equalTo("application/json"));
-        assertThat(response.getContentAsString(), not(nullValue()));
+        String jsonResponse = response.getContentAsString();
+        assertThat(jsonResponse, not(nullValue()));
+        JsonAssert.with(jsonResponse).assertThat("$.success", is(true));
+        JsonAssert.with(jsonResponse).assertThat("$.orderId", is(notNullValue()));
+        JsonAssert.with(jsonResponse).assertThat("$.orderId", containsString("OrderId#"));
+
     }
 }

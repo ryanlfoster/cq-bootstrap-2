@@ -13,8 +13,7 @@ public abstract class CheckoutCartCommand implements CartCommand {
 
     @Override
     public void execute() {
-        success.writeSuccess();
-        success.writeOrderId();
-        success.complete();
+        success.success();
+
     }
 }

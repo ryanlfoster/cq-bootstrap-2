@@ -6,6 +6,7 @@ import ecommerce.domain.web.ProductJsonGenerator;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 import java.io.IOException;
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +19,8 @@ public class ProductsToJsonTag extends SimpleTagSupport {
         for(int i = 0 ; i < (3 * 15) ; i++) {
             products.add(getProduct(i));
         }
-        getJspContext().setAttribute("productsData", ProductJsonGenerator.writeJson(products.toArray(new Product[products.size()])));
+        getJspContext().setAttribute("productsData",
+                new ProductJsonGenerator(new StringWriter()).writeProductsJson(products.toArray(new Product[products.size()])));
     }
 
     protected Product getProduct(int sku) {

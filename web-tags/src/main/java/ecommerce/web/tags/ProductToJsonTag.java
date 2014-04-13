@@ -6,13 +6,15 @@ import ecommerce.domain.web.ProductJsonGenerator;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 import java.io.IOException;
+import java.io.StringWriter;
 
 public class ProductToJsonTag extends SimpleTagSupport {
 
     @Override
     public void doTag() throws JspException, IOException {
+
         getJspContext().setAttribute("productData",
-                ProductJsonGenerator.writeJson(getProduct())
+                new ProductJsonGenerator(new StringWriter()).writeProductJson(getProduct())
         );
     }
 

@@ -7,59 +7,56 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.io.StringWriter;
+import java.io.Writer;
 
 public class ProductJsonGenerator {
 
     private static final Logger log = LoggerFactory.getLogger(ProductJsonGenerator.class);
+    private Writer writer;
 
-    public static String writeJson(Product ... products){
+    public ProductJsonGenerator(Writer writer) {
+
+        this.writer = writer;
+    }
+
+    public void writeProduct(JsonGenerator generator, Product product) throws IOException {
+        generator.writeStartObject();
+        generator.writeStringField("code", product.getCode());
+        generator.writeStringField("name", product.getName());
+        generator.writeStringField("description", product.getDescription());
+        generator.writeStringField("image", product.getImage());
+        generator.writeEndObject();
+
+    }
+
+    public String writeProductJson(Product product) {
         try {
-            StringWriter sw = new StringWriter();
-            JsonGenerator generator = new JsonFactory().createJsonGenerator(sw);
+            JsonGenerator generator = new JsonFactory().createJsonGenerator(writer);
+            writeProduct(generator, product);
+            generator.flush();
+            generator.close();
+            return writer.toString();
+        } catch (IOException e) {
+            log.error(e.getMessage());
+            return "";
+        }
+    }
+
+    public String writeProductsJson(Product... products) {
+        try {
+            JsonGenerator generator = new JsonFactory().createJsonGenerator(writer);
             generator.writeStartArray();
             for (Product product : products) {
-                write(generator, product);
+                writeProduct(generator, product);
             }
             generator.writeEndArray();
             generator.flush();
             generator.close();
-            return sw.toString();
-        } catch (IOException e) {
-            log.error(e.getMessage());
-            return "";
-        }
-    }
-
-
-    private static void write(JsonGenerator generator, Product product){
-        try {
-            generator.writeStartObject();
-            generator.writeStringField("code", product.getCode());
-            generator.writeStringField("name", product.getName());
-            generator.writeStringField("description", product.getDescription());
-            generator.writeStringField("image", product.getImage());
-            generator.writeEndObject();
-        } catch (IOException e) {
-            log.error(e.getMessage());
-        }
-
-    }
-
-    public static String writeJson(Product product) {
-        try {
-
-            StringWriter sw = new StringWriter();
-            JsonGenerator generator = new JsonFactory().createJsonGenerator(sw);
-            write(generator, product);
-            generator.flush();
-            generator.close();
-            return sw.toString();
+            return writer.toString();
         } catch (IOException e) {
             log.error(e.getMessage());
             return "";
         }
 
     }
-
 }

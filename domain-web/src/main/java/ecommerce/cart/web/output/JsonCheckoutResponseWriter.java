@@ -14,25 +14,41 @@ import java.io.Writer;
 public class JsonCheckoutResponseWriter implements CheckoutResponseWriter, CheckoutSuccessResponseWriter, CheckoutFailureResponseWriter {
 
     private static final Logger log = LoggerFactory.getLogger(JsonCheckoutResponseWriter.class);
+    public static final String ORDER_ID = "orderId";
+    public static final String SUCCESS = "success";
+
+
 
     private JsonGenerator generator;
 
-    public JsonCheckoutResponseWriter(Writer writer) {
-        try {
-            generator = new JsonFactory().createJsonGenerator(writer);
-            generator.writeStartObject();
-        } catch (IOException e) {
-            log.error("{}", e.getMessage());
-        }
-
+    public JsonCheckoutResponseWriter(final Writer writer) {
+        performIOCommand(new IOCommand() {
+            @Override
+            public void execute() throws IOException {
+                generator = new JsonFactory().createJsonGenerator(writer);
+            }
+        });
     }
 
-    public void failed(){
+    private void start() {
+        performIOCommand(new IOCommand() {
+            @Override
+            public void execute() throws IOException {
+                generator.writeStartObject();
+            }
+        });
+    }
+
+    @Override
+    public void failed() {
+        start();
         writeFailure();
         complete();
     }
 
+    @Override
     public void success(){
+        start();
         writeOrderId();
         writeSuccess();
         complete();
@@ -41,44 +57,62 @@ public class JsonCheckoutResponseWriter implements CheckoutResponseWriter, Check
     @Override
     public void writeOrderId() {
         if (null != generator) {
-            try {
-                generator.writeStringField("orderId", "OrderId#" + Math.random() * Byte.MAX_VALUE);
-            } catch (IOException e) {
-                log.error("{}", e.getMessage());
-            }
+            performIOCommand(new IOCommand() {
+                @Override
+                public void execute() throws IOException {
+                    generator.writeStringField(ORDER_ID, "OrderId#" + Math.random() * Byte.MAX_VALUE);
+
+                }
+            });
         }
     }
 
     @Override
     public void complete() {
-        try {
-            generator.writeEndObject();
-            generator.flush();
-        } catch (IOException e) {
-            log.error("{}", e.getMessage());
-        }
+        performIOCommand(new IOCommand() {
+            @Override
+            public void execute() throws IOException {
+                generator.writeEndObject();
+                generator.flush();
+            }
+        });
     }
 
     @Override
     public void writeSuccess() {
         if (null != generator) {
-            try {
-                generator.writeBooleanField("success", true);
-            } catch (IOException e) {
-                log.error("{}", e.getMessage());
+        performIOCommand(new IOCommand() {
+            @Override
+            public void execute() throws IOException {
+                generator.writeBooleanField(SUCCESS, true);
             }
+        });
         }
     }
 
     @Override
     public void writeFailure() {
         if (null != generator) {
-            try {
-                generator.writeBooleanField("success", false);
-            } catch (IOException e) {
-                log.error("{}", e.getMessage());
-            }
+            performIOCommand(new IOCommand() {
+                @Override
+                public void execute() throws IOException {
+                    generator.writeBooleanField(SUCCESS, false);
+                }
+            });
         }
     }
 
+    private void performIOCommand(IOCommand command) {
+        try {
+            command.execute();
+        } catch (IOException e) {
+            log.error(e.getMessage());
+        }
+    }
+
+    private interface IOCommand {
+        void execute() throws IOException;
+    }
+
 }
+
