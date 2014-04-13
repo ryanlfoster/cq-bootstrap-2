@@ -1,0 +1,6 @@
+(function(ecomm){
+
+    ecomm.products.data = [];
+
+
+}(ecommerce));

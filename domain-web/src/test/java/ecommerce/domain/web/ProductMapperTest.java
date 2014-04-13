@@ -14,13 +14,11 @@ public class ProductMapperTest {
     @Test
     public void parseProductJson() throws Exception {
 
-        String payload = "{ \"sku\": \"1\",   \"code\":\"1\",\"name\":\"Product Information #\",\"description\":\"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque modi, vel? Amet assumenda consequatur cum dolore, explicabo, inventore iste iusto magni minima mollitia omnis pariatur quae sequi soluta unde voluptas!\",\"image\":\"//placekitten.com/340/300\",\"quantity\":1}";
+        String payload = "{ \"code\":\"1\",\"name\":\"Product Information #\",\"description\":\"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque modi, vel? Amet assumenda consequatur cum dolore, explicabo, inventore iste iusto magni minima mollitia omnis pariatur quae sequi soluta unde voluptas!\",\"image\":\"//placekitten.com/340/300\",\"quantity\":1}";
         ProductMapper productMapper = new ProductMapper();
         Product product = productMapper.parse(new StringReader(payload));
         assertThat(product.getCode(), equalTo("1"));
-        assertThat(product.getSku(), equalTo("1"));
         assertThat(product.getName(), equalTo("Product Information #"));
         assertThat(product.getDescription(), equalTo("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque modi, vel? Amet assumenda consequatur cum dolore, explicabo, inventore iste iusto magni minima mollitia omnis pariatur quae sequi soluta unde voluptas!"));
-        assertThat(product.getQuantity(), equalTo(1));
     }
 }

@@ -36,45 +36,15 @@ public class JSONViewCartSlingServlet extends SlingSafeMethodsServlet {
     }
 
 
-    CartWriter getCartWriter(Writer writer) {
-        return new JsonCartWriter(writer);
-    }
-
-    ViewCartCommand getViewCartCommand(HttpServletRequest request , HttpServletResponse response) throws IOException {
+    protected ViewCartCommand getViewCartCommand(HttpServletRequest request, HttpServletResponse response) throws IOException {
         return new HttpViewCartCommand(request, getCartWriter(response.getWriter()));
     }
-}
 
-
-/*
-interface ViewCart {
-
-    ViewCartCommand getViewCartCommand() throws IOException;
-}
-*/
-
-/*class JSONHttpViewCart implements ViewCart {
-
-
-    private final HttpServletRequest request;
-    private final HttpServletResponse response;
-
-    public JSONHttpViewCart(HttpServletRequest request , HttpServletResponse response) {
-        this.request = request;
-        this.response = response;
-    }
-
-    public CartWriter getCartWriter(Writer writer) {
+    protected CartWriter getCartWriter(Writer writer) {
         return new JsonCartWriter(writer);
     }
+}
 
-    public ViewCartCommand getViewCartCommand() {
-        try {
-            return new HttpViewCartCommand(request, getCartWriter(response.getWriter()));
-        } catch (IOException e) {
-            return new NullViewCartCommand();
-        }
-    }
 
-}*/
+
 

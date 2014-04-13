@@ -41,6 +41,11 @@
         <servlet-class>ecommerce.http.fake.servlets.JSONCheckoutCartServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>ProductsDataJavascriptGeneratorServlet</servlet-name>
+        <jsp-file>/WEB-INF/lib/javascript/products.js.jsp</jsp-file>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>ViewCartServlet</servlet-name>
         <url-pattern>/en.cart.view.do</url-pattern>
@@ -55,5 +60,10 @@
         <servlet-name>CheckoutCartServlet</servlet-name>
         <url-pattern>/en.cart.checkout.do</url-pattern>
     </servlet-mapping>
-    
+
+
+    <servlet-mapping>
+        <servlet-name>ProductsDataJavascriptGeneratorServlet</servlet-name>
+        <url-pattern>/libs/javascript/product.data.js</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -2,13 +2,10 @@ package ecommerce.web.tags;
 
 import ecommerce.domain.Product;
 import ecommerce.domain.web.ProductJsonGenerator;
-import org.codehaus.jackson.JsonFactory;
-import org.codehaus.jackson.JsonGenerator;
 
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 import java.io.IOException;
-import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +15,7 @@ public class ProductsToJsonTag extends SimpleTagSupport {
     @Override
     public void doTag() throws JspException, IOException {
         List<Product> products = new ArrayList<Product>();
-        for(int i = 0 ; i < 21 ; i++) {
+        for(int i = 0 ; i < (3 * 15) ; i++) {
             products.add(getProduct(i));
         }
         getJspContext().setAttribute("productsData", ProductJsonGenerator.writeJson(products.toArray(new Product[products.size()])));

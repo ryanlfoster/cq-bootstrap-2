@@ -36,11 +36,9 @@ public class ProductJsonGenerator {
         try {
             generator.writeStartObject();
             generator.writeStringField("code", product.getCode());
-            generator.writeStringField("sku", product.getCode());
             generator.writeStringField("name", product.getName());
             generator.writeStringField("description", product.getDescription());
             generator.writeStringField("image", product.getImage());
-            generator.writeNumberField("quantity", product.getQuantity());
             generator.writeEndObject();
         } catch (IOException e) {
             log.error(e.getMessage());

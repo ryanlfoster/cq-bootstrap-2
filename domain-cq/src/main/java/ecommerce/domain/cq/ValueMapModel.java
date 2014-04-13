@@ -5,15 +5,15 @@ import org.apache.sling.api.wrappers.ValueMapDecorator;
 
 import java.util.HashMap;
 
-class ValueMapModel {
+public class ValueMapModel {
 
     protected final ValueMap properties;
 
-    ValueMapModel(ValueMap properties) {
+    public ValueMapModel(ValueMap properties) {
         this.properties = properties;
     }
 
-    ValueMapModel() {
+    public ValueMapModel() {
         this(new ValueMapDecorator(new HashMap<String, Object>()));
     }
 }

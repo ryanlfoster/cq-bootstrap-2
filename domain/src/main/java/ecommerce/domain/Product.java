@@ -5,10 +5,8 @@ public class Product {
     public String name;
     public String description;
     public String image;
-    public String sku;
     private double cost;
     private String code;
-    private int quantity;
 
     public Product() {
     }
@@ -19,20 +17,8 @@ public class Product {
         this.image = image;
         this.code = code;
         this.cost = cost;
-        this.quantity = 0;
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public String getSku() {
-        return sku;
-    }
 
     public String getName() {
         return name;
@@ -66,15 +52,6 @@ public class Product {
         this.code = code;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", image='" + image + '\'' +
-                '}';
-    }
-
     public double getCost() {
         return cost;
     }
@@ -82,4 +59,5 @@ public class Product {
     public void setCost(double cost) {
         this.cost = cost;
     }
+
 }

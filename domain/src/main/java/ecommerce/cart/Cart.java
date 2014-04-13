@@ -20,13 +20,13 @@ public abstract class Cart  {
             cart = new HashMap<String, PurchaseProduct>();
         }
 
-        if(cart.containsKey(product.getSku())){
-            PurchaseProduct purchaseProduct = cart.get(product.getSku());
+        if(cart.containsKey(product.getCode())){
+            PurchaseProduct purchaseProduct = cart.get(product.getCode());
             purchaseProduct.add(product);
-            cart.put(product.getSku(), purchaseProduct);
+            cart.put(product.getCode(), purchaseProduct);
         }
         else{
-            cart.put(product.getSku(), new PurchaseProduct(product));
+            cart.put(product.getCode(), new PurchaseProduct(product));
         }
         store(cart);
     }

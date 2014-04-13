@@ -4,7 +4,6 @@ import ecommerce.domain.PurchaseProduct;
 import org.junit.Test;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpSession;
-import org.springframework.mock.web.MockServletContext;
 
 import java.util.Map;
 
@@ -22,7 +21,7 @@ public class JSONAddCartCommandTest {
 
         request.setSession(session);
 
-        String s = String.format("{ \"sku\" : \"%s\" , \"name\" : \"%s\" , \"cost\" : \"%d\" }" , "SKU0" , "Product #1" , 10);
+        String s = String.format("{ \"code\" : \"%s\" , \"name\" : \"%s\" , \"cost\" : \"%d\" }" , "SKU0" , "Product #1" , 10);
 
         request.setContent(s.getBytes());
 

@@ -8,14 +8,6 @@
 </head>
 <body >
 
-<script>
-    (function(){
-        ecommerce.products = {
-            <ecomm:productsToJsonTag/>
-            data : ${productsData}
-        };
-    })(ecommerce);
-</script>
 <jsp:include page="/apps/ecommerce/components/templates/product/non-cq/base.jsp"/>
 </body>
 </html>

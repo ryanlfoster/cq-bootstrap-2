@@ -6,4 +6,4 @@
     jcr:title="Panel"
     sling:resourceSuperType="foundation/components/parbase"
     allowedParents="[*/parsys]"
-    componentGroup="Ecommerce Bootstrap"/>
+    componentGroup="AngularJS Ecommerce Bootstrap"/>

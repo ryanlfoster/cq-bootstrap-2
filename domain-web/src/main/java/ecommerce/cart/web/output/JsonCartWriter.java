@@ -14,59 +14,56 @@ import java.util.Map;
 
 public class JsonCartWriter implements CartWriter {
 
-    interface Fields {
-
-        static String ID = "id";
-        static String EMAIL = "email";
-        static String PRODUCTS = "products";
-
-        interface ProductFields {
-            static String CODE = "code";
-            static String QUANTITY = "quantity";
-            static String TOTAL_ITEM_COST = "totalItemCost";
-        }
-    }
-
     private static final Logger log = LoggerFactory.getLogger(JsonCartWriter.class);
-
     private JsonGenerator generator;
 
-    public JsonCartWriter(Writer writer) {
-        try {
-            generator = new JsonFactory().createJsonGenerator(writer);
-            generator.writeStartObject();
-        } catch (IOException e) {
-            log.error(e.getMessage());
-        }
+    public JsonCartWriter(final Writer writer) {
 
+        performIOCommand(new IOCommand() {
+            @Override
+            public void execute() throws IOException {
+                generator = new JsonFactory().createJsonGenerator(writer);
+            }
+        });
     }
 
     @Override
-    public void write(String id , Cart cart) {
+    public void write(String id, Cart cart) {
+        start();
         addCustomerInformation(id);
         addProducts(cart);
         complete();
     }
 
+    private void start() {
+        performIOCommand(new IOCommand() {
+            @Override
+            public void execute() throws IOException {
+                generator.writeStartObject();
+            }
+        });
+    }
 
-    private void addCustomerInformation(String id) {
-        try {
-            generator.writeStringField(Fields.ID, id);
-            generator.writeStringField(Fields.EMAIL, Cart.DEFAULT_CUSTOMER_EMAIL);
-        } catch (IOException e) {
-            log.error(e.getMessage());
-        }
+    private void addCustomerInformation(final String id) {
+        performIOCommand(new IOCommand() {
+            @Override
+            public void execute() throws IOException {
+                generator.writeStringField(Fields.ID, id);
+                generator.writeStringField(Fields.EMAIL, Cart.DEFAULT_CUSTOMER_EMAIL);
+            }
+        });
 
     }
 
-    private void addProducts(Cart cart) {
-        try {
-            generator.writeArrayFieldStart(Fields.PRODUCTS);
-            writeCartProducts(cart);
-            generator.writeEndArray();
-        } catch (IOException e) {
-            log.error(e.getMessage());
-        }
+    private void addProducts(final Cart cart) {
+        performIOCommand(new IOCommand() {
+            @Override
+            public void execute() throws IOException {
+                generator.writeArrayFieldStart(Fields.PRODUCTS);
+                writeCartProducts(cart);
+                generator.writeEndArray();
+            }
+        });
 
     }
 
@@ -84,15 +81,41 @@ public class JsonCartWriter implements CartWriter {
         }
     }
 
-
     private void complete() {
-        try {
-            generator.writeEndObject();
-            generator.flush();
-            generator.close();
+        performIOCommand(new IOCommand() {
+            @Override
+            public void execute() throws IOException {
+                generator.writeEndObject();
+                generator.flush();
+                generator.close();
+            }
+        });
+    }
 
+    private void performIOCommand(IOCommand command) {
+        try {
+            command.execute();
         } catch (IOException e) {
             log.error(e.getMessage());
         }
     }
+
+    private interface IOCommand {
+        void execute() throws IOException;
+    }
+
+    interface Fields {
+
+        static String ID = "id";
+        static String EMAIL = "email";
+        static String PRODUCTS = "products";
+
+        interface ProductFields {
+            static String CODE = "code";
+            static String QUANTITY = "quantity";
+            static String TOTAL_ITEM_COST = "totalItemCost";
+        }
+    }
+
+
 }
